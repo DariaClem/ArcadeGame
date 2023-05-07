@@ -4,6 +4,8 @@
 
 [Română :romania:](#pengutrip-romania)
 
+![prezentare8](https://user-images.githubusercontent.com/91901282/236703372-da5be053-dbe5-4ab5-8c81-aadc0411feab.png)
+
 # PenguTrip :eu:
 
 ### Description
