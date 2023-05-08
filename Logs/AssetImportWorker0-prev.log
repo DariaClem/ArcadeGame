@@ -1,0 +1,790 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.19f1 (c9714fde33b6) revision 13201743'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 16238 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\Unity\2021.3.19f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Facultate/MDS/JocMDS/ArcadeGame
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+49840
+Successfully changed project path to: D:/Facultate/MDS/JocMDS/ArcadeGame
+D:/Facultate/MDS/JocMDS/ArcadeGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [6384] Host "[IP] 169.254.47.39 [Port] 0 [Flags] 2 [Guid] 1275587125 [EditorId] 1275587125 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-UKMBSLU) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [6384] Host "[IP] 169.254.47.39 [Port] 0 [Flags] 2 [Guid] 1275587125 [EditorId] 1275587125 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-UKMBSLU) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 212.07 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.19f1 (c9714fde33b6)
+[Subsystems] Discovering subsystems at path D:/Unity/2021.3.19f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Facultate/MDS/JocMDS/ArcadeGame/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c8c)
+    Vendor:   NVIDIA
+    VRAM:     4019 MB
+    Driver:   31.0.15.3141
+Initialize mono
+Mono path[0] = 'D:/Unity/2021.3.19f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/2021.3.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Unity/2021.3.19f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56888
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2021.3.19f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/Unity/2021.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003865 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 136.72 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.508 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1508ms)
+		BeginReloadAssembly (189ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1005ms)
+			LoadAssemblies (188ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (489ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (412ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (137ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (191ms)
+				ProcessInitializeOnLoadMethodAttributes (73ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007934 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Facultate\MDS\JocMDS\ArcadeGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Facultate\MDS\JocMDS\ArcadeGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 174.69 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.264 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2266ms)
+		BeginReloadAssembly (211ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (14ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (1847ms)
+			LoadAssemblies (142ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (585ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (99ms)
+			SetupLoadedEditorAssemblies (940ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (175ms)
+				BeforeProcessingInitializeOnLoad (154ms)
+				ProcessInitializeOnLoadAttributes (520ms)
+				ProcessInitializeOnLoadMethodAttributes (78ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.15 seconds
+Refreshing native plugins compatible for Editor in 1.03 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3787 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 41 unused Assets / (229.6 KB). Loaded Objects now: 4249.
+Memory consumption went from 148.5 MB to 148.2 MB.
+Total: 5.403800 ms (FindLiveObjects: 0.417900 ms CreateObjectMapping: 0.372400 ms MarkObjects: 4.374100 ms  DeleteObjects: 0.238000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1474.439020 seconds.
+  path: Assets/UnderwaterFantasy/underwater-artwork/far.png
+  artifactKey: Guid(1cd881a3248054391abe77c653d9649b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnderwaterFantasy/underwater-artwork/far.png using Guid(1cd881a3248054391abe77c653d9649b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '162c4e73cb477284f7055840238bceed') in 0.293358 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/UnderwaterFantasy/underwater-artwork/foreground-2.png
+  artifactKey: Guid(76fad76cc86834b58b92ed4224bb2c71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnderwaterFantasy/underwater-artwork/foreground-2.png using Guid(76fad76cc86834b58b92ed4224bb2c71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b214a3bc863335d6e925485974931619') in 0.028047 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Night Mointains Lake/Moon.png
+  artifactKey: Guid(6417e6e0f0d394c43af1ecdc60bd10dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Night Mointains Lake/Moon.png using Guid(6417e6e0f0d394c43af1ecdc60bd10dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96e914a5c064b4c681e0eec73427e910') in 0.484499 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Night Mointains Lake/BackMountans.png
+  artifactKey: Guid(7af9025362f79498fa2c2e74d329ec59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Night Mointains Lake/BackMountans.png using Guid(7af9025362f79498fa2c2e74d329ec59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c0deb0f7950b0da48938e4258020426') in 0.381119 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 711.907963 seconds.
+  path: Assets/MagicCliffsArtwork/objectscut.png
+  artifactKey: Guid(696fec784458a2142bec5c832e8157b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicCliffsArtwork/objectscut.png using Guid(696fec784458a2142bec5c832e8157b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2eaeefbbaa351c6d9c722b816e4d2ca') in 0.034614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 146.939191 seconds.
+  path: Assets/MagicCliffsArtwork/tilesetcut1.png
+  artifactKey: Guid(923a7d2be3d00f14f8d48ccf1f0f4005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicCliffsArtwork/tilesetcut1.png using Guid(923a7d2be3d00f14f8d48ccf1f0f4005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f5cec02d2d26cc71f36357a3d2a964b') in 0.022056 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 47.302780 seconds.
+  path: Assets/MagicCliffsArtwork/tileset2.png
+  artifactKey: Guid(243b67536b5c4cf4d9aab5d37babeb21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicCliffsArtwork/tileset2.png using Guid(243b67536b5c4cf4d9aab5d37babeb21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b6e198c6dfb1b9d451b30b07cea8a0f') in 0.022362 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 979.295379 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite
+  artifactKey: Guid(22e7c00afa021524bb5bb644f8e08475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite using Guid(22e7c00afa021524bb5bb644f8e08475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80f7edca5cce9b0d96ceac34921dbcb4') in 0.007285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.033720 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Ripple.psd
+  artifactKey: Guid(652d48bb47aa3f9449283f5c365dc950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Ripple.psd using Guid(652d48bb47aa3f9449283f5c365dc950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5625afd6a110be97d1b57e6813ab16ec') in 0.025178 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/SunRays.psd
+  artifactKey: Guid(3960e1e6835b1934d95575d2ca534fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/SunRays.psd using Guid(3960e1e6835b1934d95575d2ca534fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '096a72ff6e337dc294096a5e5f071e79') in 0.252713 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/Sprite4.png
+  artifactKey: Guid(74673f9934429b64cb1f34ae3f958274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/Sprite4.png using Guid(74673f9934429b64cb1f34ae3f958274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0734ef2c11fd94071a83350d2cee4310') in 1.304391 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 62.634685 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/spritecut1.png
+  artifactKey: Guid(c24903b778f66c54fac6106ef758d68c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/spritecut1.png using Guid(c24903b778f66c54fac6106ef758d68c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '864132cd956db52755fe438162e82d11') in 0.046379 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 76.139751 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/spritecut4.png
+  artifactKey: Guid(cc35617bccea79b4caac22b54b5f832f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/spritecut4.png using Guid(cc35617bccea79b4caac22b54b5f832f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72062845c93f8f69ee88317370003d90') in 0.036492 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005980 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Facultate\MDS\JocMDS\ArcadeGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Facultate\MDS\JocMDS\ArcadeGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.86 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.413 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1414ms)
+		BeginReloadAssembly (124ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (1191ms)
+			LoadAssemblies (82ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (306ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (71ms)
+			SetupLoadedEditorAssemblies (613ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (94ms)
+				ProcessInitializeOnLoadAttributes (416ms)
+				ProcessInitializeOnLoadMethodAttributes (76ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.76 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3762 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (196.3 KB). Loaded Objects now: 4388.
+Memory consumption went from 150.3 MB to 150.1 MB.
+Total: 5.601600 ms (FindLiveObjects: 0.353300 ms CreateObjectMapping: 0.305400 ms MarkObjects: 4.680400 ms  DeleteObjects: 0.260800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 311.600661 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/noricut.png
+  artifactKey: Guid(d9f62e02f1c059940b9a5e8a83f0cd50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/noricut.png using Guid(d9f62e02f1c059940b9a5e8a83f0cd50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adbec36e4b1cda707e8655614d7f97e8') in 0.158705 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.566734 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/noricut.png
+  artifactKey: Guid(d9f62e02f1c059940b9a5e8a83f0cd50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/noricut.png using Guid(d9f62e02f1c059940b9a5e8a83f0cd50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e74cefc44ccd292cadef7b15a2304b41') in 0.103564 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 218.272915 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/tufcut.png
+  artifactKey: Guid(37306344d31dd714daac853fda270ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/tufcut.png using Guid(37306344d31dd714daac853fda270ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94fe4a9adde861a1299dc49e1f87a651') in 0.037876 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 199.736957 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art/Sprite/watercut.png
+  artifactKey: Guid(d5f0ba5ab7fdf5d4aa75092c08cbcbe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art/Sprite/watercut.png using Guid(d5f0ba5ab7fdf5d4aa75092c08cbcbe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ea309d23689b5c15b3a2b868109c7f0') in 0.137679 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 284.082922 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds
+  artifactKey: Guid(ca0c94a1f8a75564abe65d12c7bdff46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds using Guid(ca0c94a1f8a75564abe65d12c7bdff46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b92f9c3fd9802fd42fb5ebd089cb4aae') in 0.008899 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.761332 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1
+  artifactKey: Guid(98f5f00a05e23d146ba16cb7df1be6c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1 using Guid(98f5f00a05e23d146ba16cb7df1be6c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c648faba5d753f2d53ef97e1ce5e37dd') in 0.008456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.062946 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/1.png
+  artifactKey: Guid(b267b88778d8b57489a38768c9d950dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/1.png using Guid(b267b88778d8b57489a38768c9d950dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a8856d57723cd654499ac7660a10a99') in 0.058661 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/3.png
+  artifactKey: Guid(e53968752443d4a41a76d3e3cbd4adb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/3.png using Guid(e53968752443d4a41a76d3e3cbd4adb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b2379127adbc1f19f3bc78d3505eeaf') in 0.033600 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/4.png
+  artifactKey: Guid(04c13aeb674f4fd4db3d91fc037ed5ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/4.png using Guid(04c13aeb674f4fd4db3d91fc037ed5ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6fcccbfc6ddac983054cac18e313df1') in 0.036032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.607008 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 3/1.png
+  artifactKey: Guid(e0486daa0b783704d8ad2900880dd35a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 3/1.png using Guid(e0486daa0b783704d8ad2900880dd35a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4038fee2adf5d979e39e089b56f9c852') in 0.031633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 3/3.png
+  artifactKey: Guid(afca928eded63d341850c4fb02b0f937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 3/3.png using Guid(afca928eded63d341850c4fb02b0f937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '280437815e45835a7f0c16cb19790807') in 0.036468 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.438847 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/1.png
+  artifactKey: Guid(b9bbe85744a529049a1d326feebe2fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/1.png using Guid(b9bbe85744a529049a1d326feebe2fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5734ebe35f32ff270100144f98e7f62') in 0.028167 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/4.png
+  artifactKey: Guid(ab9a1daf99b281349a5fc1421400247f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/4.png using Guid(ab9a1daf99b281349a5fc1421400247f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5383d5b04879f8f2c6f49f984ba80af8') in 0.033463 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.826510 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4/1.png
+  artifactKey: Guid(b5bab605477f36e40b139503527389f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4/1.png using Guid(b5bab605477f36e40b139503527389f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec3422ddeff80848d068945499c30af4') in 0.029808 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4/3.png
+  artifactKey: Guid(ffbd12ba8e7eb5f46a380c0f7280a491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4/3.png using Guid(ffbd12ba8e7eb5f46a380c0f7280a491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8944bf57a92379a1dec969b55729a770') in 0.034709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.777479 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 5/1.png
+  artifactKey: Guid(81950ddb47ec4d34b82aca4572207701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 5/1.png using Guid(81950ddb47ec4d34b82aca4572207701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3841b21b1e2b6aba593e0a7d4d09e8b5') in 0.037224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.018824 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 5/3.png
+  artifactKey: Guid(6b1821108390b6640a0deafac99cdaa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 5/3.png using Guid(6b1821108390b6640a0deafac99cdaa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '870d8636d52a3f95ce8cfc5dbbea0191') in 0.040659 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.151120 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 7/1.png
+  artifactKey: Guid(4d69f560f2b26ee44bdf3696c6ff1140) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 7/1.png using Guid(4d69f560f2b26ee44bdf3696c6ff1140) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54a280cd28cdbd0abbc2c10fd3aa0055') in 0.034707 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 7/3.png
+  artifactKey: Guid(2d966ecd8685d9949907e8228d7a2f06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 7/3.png using Guid(2d966ecd8685d9949907e8228d7a2f06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ca29ee0b7fd9d23319eb94842674a00') in 0.033788 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.677496 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 6/1.png
+  artifactKey: Guid(f89df668296ab0541a234dcaec5abc1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 6/1.png using Guid(f89df668296ab0541a234dcaec5abc1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a4f17ffb99362566db00c8539f0d5ef') in 0.024215 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 6/5.png
+  artifactKey: Guid(151b831cf0bed9f41a0d7c95ecfb97a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 6/5.png using Guid(151b831cf0bed9f41a0d7c95ecfb97a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '118aba7731ef63b17a4c2ec26e6feec1') in 0.024286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 6/6.png
+  artifactKey: Guid(5c1a3c08b743ca74fb3afe263ac84341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 6/6.png using Guid(5c1a3c08b743ca74fb3afe263ac84341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acd82103c10e8d2da18f893274241e3d') in 0.032728 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.970662 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 8/1.png
+  artifactKey: Guid(b93288697c2e9064488854d935b483a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 8/1.png using Guid(b93288697c2e9064488854d935b483a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '742f0bc35db56e13a642d0668f1ff611') in 0.025827 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 8/6.png
+  artifactKey: Guid(97c716587ff30d943bab1a0a37073be7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 8/6.png using Guid(97c716587ff30d943bab1a0a37073be7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8db9697e9947e543b14710e9b1b4e611') in 0.029810 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 8/4.png
+  artifactKey: Guid(0b49bfa4356e62f459c62f6b6f402d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 8/4.png using Guid(0b49bfa4356e62f459c62f6b6f402d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b2e3b98d62a6f772e4ca2de4e873188') in 0.028885 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011917 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Facultate\MDS\JocMDS\ArcadeGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Facultate\MDS\JocMDS\ArcadeGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.21 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.214 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2215ms)
+		BeginReloadAssembly (242ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (13ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (65ms)
+		EndReloadAssembly (1791ms)
+			LoadAssemblies (172ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (736ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (98ms)
+			SetupLoadedEditorAssemblies (701ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (25ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (140ms)
+				ProcessInitializeOnLoadAttributes (456ms)
+				ProcessInitializeOnLoadMethodAttributes (72ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.32 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3762 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (196.3 KB). Loaded Objects now: 4405.
+Memory consumption went from 150.4 MB to 150.2 MB.
+Total: 5.827700 ms (FindLiveObjects: 0.477700 ms CreateObjectMapping: 0.378000 ms MarkObjects: 4.731200 ms  DeleteObjects: 0.239300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009080 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Facultate\MDS\JocMDS\ArcadeGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Facultate\MDS\JocMDS\ArcadeGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.50 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.062 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2064ms)
+		BeginReloadAssembly (214ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (12ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (61ms)
+		EndReloadAssembly (1655ms)
+			LoadAssemblies (164ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (538ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (106ms)
+			SetupLoadedEditorAssemblies (728ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (30ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (146ms)
+				ProcessInitializeOnLoadAttributes (465ms)
+				ProcessInitializeOnLoadMethodAttributes (76ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.63 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3762 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (196.3 KB). Loaded Objects now: 4408.
+Memory consumption went from 150.4 MB to 150.2 MB.
+Total: 5.645100 ms (FindLiveObjects: 0.545900 ms CreateObjectMapping: 0.511500 ms MarkObjects: 4.363000 ms  DeleteObjects: 0.222900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008324 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Facultate\MDS\JocMDS\ArcadeGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Facultate\MDS\JocMDS\ArcadeGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.15 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.083 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2084ms)
+		BeginReloadAssembly (213ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (12ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (63ms)
+		EndReloadAssembly (1656ms)
+			LoadAssemblies (153ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (539ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (114ms)
+			SetupLoadedEditorAssemblies (720ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (28ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (146ms)
+				ProcessInitializeOnLoadAttributes (461ms)
+				ProcessInitializeOnLoadMethodAttributes (76ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.72 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3762 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (196.2 KB). Loaded Objects now: 4411.
+Memory consumption went from 150.4 MB to 150.2 MB.
+Total: 5.720000 ms (FindLiveObjects: 0.595800 ms CreateObjectMapping: 0.570800 ms MarkObjects: 4.303300 ms  DeleteObjects: 0.247900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1295.045081 seconds.
+  path: Assets/MagicCliffsArtwork
+  artifactKey: Guid(f79f0bf4fb8a66746b5b53418d40c8f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicCliffsArtwork using Guid(f79f0bf4fb8a66746b5b53418d40c8f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3f74663eb811f5210859282af5224c9') in 0.031652 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.861795 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c826f90f708680eb8ba70bd821c63c7') in 0.016973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.934549 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 2.psd
+  artifactKey: Guid(763ff91b0d47c65468ae667d35b9fc04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 2.psd using Guid(763ff91b0d47c65468ae667d35b9fc04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c448d8ebe610c6032bf3a24d8dbe4c3c') in 0.221062 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.247256 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 8.psd
+  artifactKey: Guid(4da7afe9b81c3c546bc6280ad2dca6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 8.psd using Guid(4da7afe9b81c3c546bc6280ad2dca6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bccdab2bf6bf9ed46b99b205c61bb1d3') in 0.065713 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.350217 seconds.
+  path: Assets/UnderwaterFantasy/underwater-artwork/Materials/sand.mat
+  artifactKey: Guid(946de4abd87e64ef4bc4991e2dfed830) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnderwaterFantasy/underwater-artwork/Materials/sand.mat using Guid(946de4abd87e64ef4bc4991e2dfed830) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd25301e355746261a7005c8333cacd81') in 0.327520 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 5
+  artifactKey: Guid(3dfea89f13e89de40bf99299c2131170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 5 using Guid(3dfea89f13e89de40bf99299c2131170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06de0a89d2bdd06cccbb05f8baf10439') in 0.016376 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.284540 seconds.
+  path: Assets/Free Asset - 2D Handcrafted Art
+  artifactKey: Guid(8a7616edd6d655148b2ae7f8701777cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Asset - 2D Handcrafted Art using Guid(8a7616edd6d655148b2ae7f8701777cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e51ffc3058d59edb05bd59694f70a06') in 0.016553 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.727308 seconds.
+  path: Assets/UnderwaterFantasy/underwater-artwork/Materials
+  artifactKey: Guid(d119a5bcb8b184042b8e04a27d6546de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnderwaterFantasy/underwater-artwork/Materials using Guid(d119a5bcb8b184042b8e04a27d6546de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df839582e6f55e1553bfe7abe1634ec6') in 0.016188 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.236760 seconds.
+  path: Assets/Night Mointains Lake
+  artifactKey: Guid(e8d1351fcd0e2134492acd2b066ca15b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Night Mointains Lake using Guid(e8d1351fcd0e2134492acd2b066ca15b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e24f004d0eb0d8394eaf7102d92f377') in 0.016404 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.744845 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 4.psd
+  artifactKey: Guid(7308c559f205182459360e97b915f7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 4.psd using Guid(7308c559f205182459360e97b915f7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b81153ea1717f61466b76318e633836') in 0.064585 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.264309 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 7
+  artifactKey: Guid(189e2908cfe5f7146af3a7b964cbc73e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 7 using Guid(189e2908cfe5f7146af3a7b964cbc73e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b3b14935b3780b759b4d86bd7a130e0') in 0.016602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.383174 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD
+  artifactKey: Guid(efa41d76e260c064f80e13477bac84d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD using Guid(efa41d76e260c064f80e13477bac84d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '138b5828f3f087a4da4a909a332ef98b') in 0.017140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.270678 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2
+  artifactKey: Guid(588742f13d3ca934ca6bcce8226af048) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2 using Guid(588742f13d3ca934ca6bcce8226af048) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a034e10748b67848e7520d61d54b159b') in 0.004289 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.093363 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 5.psd
+  artifactKey: Guid(79c465d1ef8ee9447813da8c6b610329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 5.psd using Guid(79c465d1ef8ee9447813da8c6b610329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2598e5ec62e18bc4e9cf37435c0e2fb') in 0.093616 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.791860 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4
+  artifactKey: Guid(852488c2fe305d445843543f32ccbd42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4 using Guid(852488c2fe305d445843543f32ccbd42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cb74174b0158f2bebebad5468a4d194') in 0.004325 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.960338 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 6
+  artifactKey: Guid(36d5694571e592044b5086814d8af368) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 6 using Guid(36d5694571e592044b5086814d8af368) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b73039d30526d3bd3484308d6234ace') in 0.017362 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.855280 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set
+  artifactKey: Guid(2b501c46f481da34f9220921e617588c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set using Guid(2b501c46f481da34f9220921e617588c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69e545bd2d22538aa4d5d329183311d0') in 0.017100 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.997506 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 6.psd
+  artifactKey: Guid(7619a8b0f849d76428d77f665b417409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 6.psd using Guid(7619a8b0f849d76428d77f665b417409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8937fa94c7c8dc0dbe75cf41bd376d7c') in 0.043470 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.086403 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/License.txt
+  artifactKey: Guid(c4b9f821549089f49913fc7cf224a0a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/License.txt using Guid(c4b9f821549089f49913fc7cf224a0a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd7c3a783f36cf286489ac24c741c42a') in 0.022208 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.043915 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 3.psd
+  artifactKey: Guid(10e9a594961b9a447bca58da98a9f5a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 3.psd using Guid(10e9a594961b9a447bca58da98a9f5a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef10a6928585ddf81b6550139feb2530') in 0.042964 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.228404 seconds.
+  path: Assets/UnderwaterFantasy/underwater-artwork/Materials/far.mat
+  artifactKey: Guid(012092e71808f48cdacc7efac781ba43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnderwaterFantasy/underwater-artwork/Materials/far.mat using Guid(012092e71808f48cdacc7efac781ba43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ce2e47ffb755968facf729c48b03e9f') in 0.026227 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.555587 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 1.psd
+  artifactKey: Guid(7ffecb25d28c06e4b9d69664a6e4d60f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 1.psd using Guid(7ffecb25d28c06e4b9d69664a6e4d60f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78f446da294e9063bff90de81333f947') in 0.048573 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.917770 seconds.
+  path: Assets/UnderwaterFantasy
+  artifactKey: Guid(d4d59b2e7aa25ca4587d620b830ea20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnderwaterFantasy using Guid(d4d59b2e7aa25ca4587d620b830ea20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0c26fde18c627530f47e8a0c5f9523a') in 0.011018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.560926 seconds.
+  path: Assets/UnderwaterFantasy/underwater-artwork/Materials/foreground-2.mat
+  artifactKey: Guid(cbe0ff4b914fb46c192b53c8997fbd82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnderwaterFantasy/underwater-artwork/Materials/foreground-2.mat using Guid(cbe0ff4b914fb46c192b53c8997fbd82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3aef264a4737471f32f93654ae8d7ce0') in 0.020269 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.115159 seconds.
+  path: Assets/UnderwaterFantasy/underwater-artwork/Materials/foreground-1.mat
+  artifactKey: Guid(118277b34d7614f779a6dac22306b8ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnderwaterFantasy/underwater-artwork/Materials/foreground-1.mat using Guid(118277b34d7614f779a6dac22306b8ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2809505808e0e7904951d3374e1d6db') in 0.021650 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.312784 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 3
+  artifactKey: Guid(b9a8dd70082516f4ab718bb780c9849a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 3 using Guid(b9a8dd70082516f4ab718bb780c9849a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a1871b856c031c7497158be365ba445') in 0.010442 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.459087 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 8
+  artifactKey: Guid(606d557242794a847a91efda983f9442) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 8 using Guid(606d557242794a847a91efda983f9442) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a85398d0435bc95e6143d45a85ae75c') in 0.009228 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.692850 seconds.
+  path: Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 7.psd
+  artifactKey: Guid(2687704604c93ab448a0cac914f3e001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/craftpix-net-665906-free-sky-with-clouds-background-pixel-art-set/PSD/Clouds 7.psd using Guid(2687704604c93ab448a0cac914f3e001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a856b0dcb3989e4526dd69c4cc26bc9') in 0.037171 seconds 
