@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Logic
-  - PenguinWithFeather
+  - Diamond
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -13,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
@@ -42,7 +42,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Player
-    uniqueID: 437186237
     locked: 0
