@@ -42,7 +42,10 @@ Pe parcursul jocului, vor apărea obiecte care vor modifica modul de joc atunci 
 6. Ca jucător, vreau să pot personaliza aspectul jocului, cum ar fi background-ul.
 7. Ca jucător, vreau ca progresul în joc să fie salvat, astfel încât să pot relua jocul de unde am rămas și să nu pierd scorul și recompensele obținute.
 8. Ca jucător, vreau să pot explora diferite moduri de joc, astfel încât să am parte de varietate și să descopăr noi provocări și surprize.
-9. Ca jucător, vreau să pot urma povestea pinguinului în timp ce avansează, astfel încât să nu devină monoton jocul
+9. Ca jucător, vreau să pot urmări povestea pinguinului în căutarea hărții sale, astfel încât să nu devină monoton jocul.
 10. Ca un jucător nou, vreau să am acces la un tutorial interactiv și informativ înainte de a începe jocul, astfel încât să înțeleg obiectivele și abilitățile disponibile pentru a avea o experiență plăcută.
 
+### Diagramă
+
+![diagrama](https://github.com/DariaClem/ArcadeGame/assets/91901282/859e2de7-50d2-4672-a281-4edff9993a8c)
 
