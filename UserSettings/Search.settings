@@ -7,7 +7,7 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.DA949528" = "sun"
+	"last_search.DA949528" = "player prefs"
 	"OpenInspectorPreview.DA949528" = "0"
 	"currentGroup.DA949528" = "all"
 }
@@ -56,8 +56,10 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
-	"s"
-	"matterial"
+	"m"
+	"c"
+	"w"
+	"l"
 ]
 searchItemFavorites = [
 ]

@@ -38,7 +38,7 @@ public class PenguinScript : MonoBehaviour
     {
         myAnimator.SetFloat("yVelocity", myRigidbody.velocity.y);
 
-        if (Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.W))
+        if (Input.GetButtonDown("Jump"))
         {
             myAnimator.SetBool("Jump", true);
             Jump();   
