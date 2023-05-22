@@ -11,18 +11,22 @@ public class ManagerScript : MonoBehaviour
 
     void Start()
     {
+        // legatura cu camera
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScriptCamera>();
+        // legatura cu pinguinul
         penguin = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinScript>();
     }
 
     private void Update()
     {
+        // conditie de oprire daca pinguinul este sub pozitia camerei
         if (penguin.myRigidbody.position.y < mainCamera.transform.position.y - 6 || featherPenguin.transform.position.x > (float)8.49)
         {
             Restart();
         }
     }
 
+    // resetez jocul
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

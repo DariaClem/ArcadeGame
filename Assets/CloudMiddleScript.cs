@@ -11,13 +11,16 @@ public class CloudMiddleScript : MonoBehaviour
 
     void Start()
     {
+        // Legatura cu logicScript
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        // Legatura cu script-ul pentru camera
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScriptCamera>();
     }
 
     void Update()
     {
+        // daca scorul jucatorului se produc modificari asupra vitezei de miscare a camerei
         if (logic.playerScore == 5)
         {
             mainCamera.MovementSpeed = (float)1.5;
@@ -42,6 +45,7 @@ public class CloudMiddleScript : MonoBehaviour
         }
     }
 
+    // functie pentru cresterea scorului odata ce pinguinul a ajuns pe un nor urmator
     private void OnTriggerEnter2D(Collider2D collision)
     {
         logic.addScore();

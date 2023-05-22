@@ -23,6 +23,7 @@ public class CloudScriptSpawner : MonoBehaviour
         }
         else
         {
+            // verificam daca mai trebuie sa generam nori
             if (spawnNumber < 25)
             {
                 SpawnCloud();
@@ -33,6 +34,7 @@ public class CloudScriptSpawner : MonoBehaviour
 
     void SpawnCloud()
     {
+        // spawnnez norii in pozitii convenabile
         if (spawnNumber % 2 == 0)
         {
             GameObject gameObject = Instantiate(cloud[Random.Range(0, cloud.Length)], new Vector3(Random.Range(-6, 3), (coordPeY + 1)), transform.rotation);
