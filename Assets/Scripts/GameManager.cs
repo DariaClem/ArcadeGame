@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     private Vector3 startPos;
 
     [SerializeField]
+    private GameObject backgrounds;
+
+    [SerializeField]
     private Vector2 minMaxRange, spawnRange;
 
     [SerializeField]
@@ -33,7 +36,9 @@ public class GameManager : MonoBehaviour
 
     private int score, highScore;
 
-    private float cameraOffsetX;
+    private float cameraOffsetX, backgroundOffsetX;
+
+    private bool backOffsetStored;
 
     private GameState currentState;
 
@@ -48,6 +53,7 @@ public class GameManager : MonoBehaviour
     public AudioClip lineSound;
     private void Awake()
     {
+        backgrounds = GameObject.FindWithTag("Backgrounds");
         if(instance == null)
         {
             instance = this;
@@ -85,6 +91,16 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+
+        if (!backOffsetStored)
+        {
+            backOffsetStored = true;
+            backgroundOffsetX = backgrounds.transform.position.x;
+        }
+
+        backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX, backgrounds.transform.position.y, backgrounds.transform.position.z);
+
+
         if(currentState == GameState.INPUT)
         {
             if(Input.GetMouseButton(0))
