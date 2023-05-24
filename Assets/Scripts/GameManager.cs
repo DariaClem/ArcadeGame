@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         backgrounds = GameObject.FindWithTag("Backgrounds");
+        backOffsetStored = false;
+
         if(instance == null)
         {
             instance = this;
@@ -79,10 +81,6 @@ public class GameManager : MonoBehaviour
         cameraOffsetX = currentCamera.transform.position.x - player.transform.position.x;
 
         GameStart();
-        if (StateManager.instance.hasSceneStarted)
-        {
-            GameStart();
-        }
     }
     private void Start()
     {
@@ -98,7 +96,7 @@ public class GameManager : MonoBehaviour
             backgroundOffsetX = backgrounds.transform.position.x;
         }
 
-        backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX, backgrounds.transform.position.y, backgrounds.transform.position.z);
+        backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX - 2, backgrounds.transform.position.y, backgrounds.transform.position.z);
 
 
         if(currentState == GameState.INPUT)
