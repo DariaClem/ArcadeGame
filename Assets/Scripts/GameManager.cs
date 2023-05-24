@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
         backgrounds = GameObject.FindWithTag("Backgrounds");
         backOffsetStored = false;
 
+
         if(instance == null)
         {
             instance = this;
@@ -69,7 +70,6 @@ public class GameManager : MonoBehaviour
 
         endPanel.SetActive(false);
         scorePanel.SetActive(false);
-        startPanel.SetActive(true);
 
         score = 0;
         highScore = PlayerPrefs.HasKey("HighScore") ? PlayerPrefs.GetInt("HighScore") : 0;
@@ -103,8 +103,6 @@ public class GameManager : MonoBehaviour
         {
             if(Input.GetMouseButton(0))
             { 
-               
-                anim.instance.animator.SetBool("attack", true);
 
                 currentState = GameState.GROWING;
                 ScaleStick();
@@ -115,7 +113,6 @@ public class GameManager : MonoBehaviour
         {
             if(Input.GetMouseButton(0))
             {
-                anim.instance.animator.SetBool("attack", false);
 
                 ScaleStick();
                 audioSource.PlayOneShot(lineSound);
@@ -145,6 +142,8 @@ public class GameManager : MonoBehaviour
 
         Vector3 movePosition = currentStick.transform.position + new Vector3(currentStick.transform.localScale.y,0,0);
         movePosition.y = player.transform.position.y;
+
+        anim.instance.animator.SetBool("walk", true);
         x = Move(player.transform,movePosition,0.5f);
         yield return x;
 
@@ -173,14 +172,15 @@ public class GameManager : MonoBehaviour
             UpdateScore();
 
             movePosition = player.transform.position;
-            movePosition.x = nextPillar.transform.position.x + nextPillar.transform.localScale.x * 0.5f - 0.35f;
+            movePosition.x = nextPillar.transform.position.x + nextPillar.transform.localScale.x * 0.5f - 0.35f - 1.1f;
             x = Move(player.transform, movePosition, 0.2f);
             yield return x;
+            anim.instance.animator.SetBool("walk", false);
 
             movePosition = currentCamera.transform.position;
             movePosition.x = player.transform.position.x + cameraOffsetX;
             x = Move(currentCamera.transform, movePosition, 0.5f);
-           // anim.instance.animator.SetBool("walk", true);
+           
 
             yield return x;
 
@@ -220,8 +220,7 @@ public class GameManager : MonoBehaviour
         CreatePlatform();
 
         Vector3 playerPos = playerPrefab.transform.position;
-        playerPos.x += (currentPillar.transform.localScale.x * 0.5f - 0.35f);
-        playerPos.x += (currentPillar.transform.localScale.x * 0.5f - 0.35f);
+        playerPos.x = playerPos.x + (currentPillar.transform.localScale.x * 0.5f - 0.35f);
         player = Instantiate(playerPrefab,playerPos,Quaternion.identity);
         player.name = "Player";
         //anim.instance.animator.SetBool("walk", false);
@@ -281,7 +280,6 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        startPanel.SetActive(false);
         scorePanel.SetActive(true);
 
         CreatePlatform();
@@ -314,8 +312,6 @@ public class GameManager : MonoBehaviour
             var current = Vector3.Lerp(init, target, normalized);
             currentTransform.position = current;
             //anim.instance.animator.SetBool("idle", false);
-
-            anim.instance.animator.SetBool("walk", true);
 
             yield return null;
         }
