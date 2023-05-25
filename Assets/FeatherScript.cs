@@ -8,6 +8,7 @@ public class FeatherScript : MonoBehaviour
     [SerializeField] GameObject feather;
     [SerializeField] GameObject featherPenguin;
 
+    // cand am ajuns la final (pinguinul se intersecteaza cu pana) activez animatia
     private void OnTriggerEnter2D(Collider2D collision)
     {
         penguin.SetActive(false);

@@ -10,6 +10,8 @@ public class LogicScript : MonoBehaviour
     public TMP_Text scoreText;
 
     [ContextMenu("Increase Score")]
+
+    // functie pentru cresterea scorului
     public void addScore()
     {
         playerScore++;
