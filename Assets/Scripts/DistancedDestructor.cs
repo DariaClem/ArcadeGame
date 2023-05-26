@@ -24,7 +24,7 @@ public class DistancedDestructor : MonoBehaviour
 
             return;
         }
-        if(player.transform.position.x - transform.position.x > 15f)
+        if(player.transform.position.x - transform.position.x > 25f)
         {
             Destroy(gameObject);
         }
