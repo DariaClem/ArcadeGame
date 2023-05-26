@@ -224,6 +224,7 @@ public class GameManager : MonoBehaviour
 
         Vector3 playerPos = playerPrefab.transform.position;
         playerPos.x = playerPos.x + (currentPillar.transform.localScale.x * 0.5f - 0.35f);
+        playerPos.y = playerPos.y + 0.07f;
         player = Instantiate(playerPrefab,playerPos,Quaternion.identity);
         player.name = "Player";
         //anim.instance.animator.SetBool("walk", false);
