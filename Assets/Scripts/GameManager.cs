@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     private Vector2 minMaxRange, spawnRange;
 
     [SerializeField]
-    private GameObject pillarPrefab, playerPrefab, stickPrefab, currentCamera;
+    private GameObject pillarPrefab, playerPrefab, stickPrefab, currentCamera, cloudPrefab;
 
     [SerializeField]
     private Transform rotateTransform, endRotateTransform;
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     private float cameraOffsetX, backgroundOffsetX;
 
-    private bool backOffsetStored;
+    private bool backOffsetStored, canBuild;
 
     private GameState currentState;
 
@@ -55,6 +55,9 @@ public class GameManager : MonoBehaviour
     {
         backgrounds = GameObject.FindWithTag("Backgrounds");
         backOffsetStored = false;
+ 
+        cloudPrefab = GameObject.FindWithTag("Cloud");
+        canBuild = true;
 
 
         if(instance == null)
@@ -101,7 +104,7 @@ public class GameManager : MonoBehaviour
 
         if(currentState == GameState.INPUT)
         {
-            if(Input.GetMouseButton(0))
+            if(Input.GetMouseButton(0) && canBuild)
             { 
 
                 currentState = GameState.GROWING;
@@ -144,7 +147,7 @@ public class GameManager : MonoBehaviour
         movePosition.y = player.transform.position.y;
 
         anim.instance.animator.SetBool("walk", true);
-        x = Move(player.transform,movePosition,0.5f);
+        x = Move(player.transform,movePosition,0.35f + 0.16f * currentStick.transform.localScale.y);
         yield return x;
 
         var results = Physics2D.RaycastAll(player.transform.position,Vector2.down);
@@ -245,6 +248,14 @@ public class GameManager : MonoBehaviour
         {
             Vector3 tempPos = currentPlatform.transform.position;
         }
+
+        if(Random.Range(0,10) == 0)
+        {
+            var tempCloud = Instantiate(cloudPrefab);
+            Vector3 tempPos = currentPlatform.transform.position;
+            tempPos.y = cloudPrefab.transform.position.y;
+            tempCloud.transform.position = tempPos;
+        }
     }
    
     void SetRandomSize(GameObject pillar)
@@ -275,6 +286,11 @@ public class GameManager : MonoBehaviour
 
         scoreEndText.text = score.ToString();
         highScoreText.text = highScore.ToString();
+    }
+
+    public void CloudAccessed()
+    {
+        canBuild = false;
     }
 
 

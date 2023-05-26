@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\DistancedDestructor.cs" />
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\Cloud.cs" />
      <Compile Include="Assets\Scripts\StateManager.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\fdsfd.cs" />

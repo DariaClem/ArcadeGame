@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638202743676045926
-    m_Hash: 3001048312
+      ticks: 638207033000457497
+    m_Hash: 857071877
   m_LockFileStatus:
     m_FilePath: C:/Users/windows/Desktop/Documents/21-05/ArcadeGame/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638202743676264949
-    m_Hash: 1965097625
+      ticks: 638207033000462533
+    m_Hash: 1969959463
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -472,6 +472,7 @@ m_ResolvedPackages:
     - 1.3.2
     - 1.3.3
     - 1.3.4
+    - 1.3.5
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -483,6 +484,7 @@ m_ResolvedPackages:
     - 1.3.2
     - 1.3.3
     - 1.3.4
+    - 1.3.5
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -2881,12 +2883,14 @@ m_ResolvedPackages:
     - 1.7.1
     - 1.8.1
     - 1.8.2
+    - 1.9.0
     compatible:
     - 1.6.0
     - 1.7.0
     - 1.7.1
     - 1.8.1
     - 1.8.2
+    - 1.9.0
     verified: 1.6.0
   dependencies:
   - name: com.unity.modules.unitywebrequest

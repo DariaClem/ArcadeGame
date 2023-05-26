@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Diamond
   - Platform
+  - Backgrounds
+  - Cloud
   layers:
   - Default
   - TransparentFX
