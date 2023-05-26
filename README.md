@@ -26,6 +26,8 @@ Porniți într-o călătorie memorabilă cu Pengu în căutarea hărții sale pi
 
 Dar amintiți-vă, uneori călătoria este mai importantă decât destinația. Sunteți pregătiți să vă alăturați lui Pengu în căutarea sa epică?
 
+Pagina oficială a jocului: https://github.com/DariaClem/Presentation-Site-PenguTrip
+
 ### Informații
 
 Proiectul constă în crearea unui joc arcade. Jocul este de tipul highscore. Scopul jocului este de a obține un scor cât mai mare, evitând obstacolele de pe parcurs. Dacă personajul va cădea de pe hartă, scorul va fi resetat.
