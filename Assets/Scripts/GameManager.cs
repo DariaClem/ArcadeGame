@@ -247,11 +247,6 @@ public class GameManager : MonoBehaviour
 
         if(Random.Range(0,10) == 0)
         {
-            Vector3 tempPos = currentPlatform.transform.position;
-        }
-
-        if(Random.Range(0,10) == 0)
-        {
             var tempCloud = Instantiate(cloudPrefab);
             Vector3 tempPos = currentPlatform.transform.position;
             tempPos.y = cloudPrefab.transform.position.y;
