@@ -21,6 +21,10 @@ public class CloudMiddleScript : MonoBehaviour
     void Update()
     {
         // daca scorul jucatorului se produc modificari asupra vitezei de miscare a camerei
+        if (mainCamera.transform.position.y > 76)
+        {
+            mainCamera.MovementSpeed = 0;
+        }
         if (logic.playerScore == 5)
         {
             mainCamera.MovementSpeed = (float)1.5;
