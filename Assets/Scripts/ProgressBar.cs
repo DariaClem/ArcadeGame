@@ -14,27 +14,6 @@ public class ProgressBar : MonoBehaviour
     private float _targetProgress = 0.1f;
     public TMP_Text range;
     public TMP_Text level;
-
-    private String CurrentBackground(int currentLevel)
-    {
-        switch (currentLevel)
-        {
-            case 1:
-                return "ShadowCanyon";
-            case 2:
-                return "WhisperSongMeados";
-            case 3:
-                return "FlameMountains";
-            case 4:
-                return "SunfireSands";
-            case 5:
-                return "GoldenPlans";
-            case 6:
-                return "EchoLake";
-            default:
-                return "CrystalWasteland";
-        }
-    }
     
     private void Awake()
     {
@@ -72,7 +51,6 @@ public class ProgressBar : MonoBehaviour
             PlayerPrefs.SetInt("currentScore", currentScore + playerScore);
         }
         
-        PlayerPrefs.SetString("currentBackground", CurrentBackground(currentLevel+1));
 
         _slider.value = (float) currentScore / requiredXp;
         float increment = (float) playerScore / requiredXp;

@@ -31,6 +31,10 @@ public class ManagerScript : MonoBehaviour
             if (t.parent == backgrounds.transform) {
                 if (t.gameObject.name == PlayerPrefs.GetString("currentBackground"))
                     t.gameObject.SetActive(true);
+                else
+                {
+                    t.gameObject.SetActive(false);
+                }
             }
         }
     }
