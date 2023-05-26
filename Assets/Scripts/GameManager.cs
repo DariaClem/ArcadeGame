@@ -329,6 +329,8 @@ public class GameManager : MonoBehaviour
             currentTransform.position = current;
             //anim.instance.animator.SetBool("idle", false);
 
+
+            backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX - 2, backgrounds.transform.position.y, backgrounds.transform.position.z);
             yield return null;
         }
     }
