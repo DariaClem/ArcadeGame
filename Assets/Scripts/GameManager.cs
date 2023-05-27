@@ -220,7 +220,7 @@ public class GameManager : MonoBehaviour
     //}
     void CreateStartObjects()
     {
-        CreatePlatform();
+        CreatePlatform(false);
 
         Vector3 playerPos = playerPrefab.transform.position;
         playerPos.x = playerPos.x + (currentPillar.transform.localScale.x * 0.5f - 0.35f);
@@ -236,7 +236,7 @@ public class GameManager : MonoBehaviour
         currentStick = Instantiate(stickPrefab, stickPos, Quaternion.identity);
     }
 
-    void CreatePlatform()
+    void CreatePlatform(bool spawnCloud = true)
     {
         var currentPlatform = Instantiate(pillarPrefab);
         currentPillar = nextPillar == null ? currentPlatform : nextPillar;
@@ -245,7 +245,7 @@ public class GameManager : MonoBehaviour
         Vector3 tempDistance = new Vector3(Random.Range(spawnRange.x,spawnRange.y) + currentPillar.transform.localScale.x*0.5f,0,0);
         startPos += tempDistance;
 
-        if(Random.Range(0,10) == 0)
+        if(Random.Range(0,10) == 0 && spawnCloud)
         {
             var tempCloud = Instantiate(cloudPrefab);
             Vector3 tempPos = currentPlatform.transform.position;
