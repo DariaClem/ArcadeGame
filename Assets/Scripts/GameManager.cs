@@ -121,17 +121,17 @@ public class GameManager : MonoBehaviour
             {
                 if (firstJ)
                 {
-                    cloudImage.transform.position = new Vector3(player.transform.position.x + 5.4f, player.transform.position.y - 0.47f, player.transform.position.z);
+                    cloudImage.transform.position = new Vector3(player.transform.position.x + 6.65f, player.transform.position.y + 0.0f, player.transform.position.z);
                     anim.instance.animator.SetBool("attack", true);
                     isMoving = true;
-                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 2.1f, player.transform.position.y + 2.1f, player.transform.position.z), 0.25f));
+                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 2.3f, player.transform.position.y + 2.3f, player.transform.position.z), 0.25f));
                     firstJ = false;
                 }
 
                 if (!firstJ && secondJ && isMoving == false)
                 {
                     isMoving = true;
-                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.5f, player.transform.position.y + 1f, player.transform.position.z), 0.3f));
+                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.7f, player.transform.position.y + 1.2f, player.transform.position.z), 0.3f));
                     secondJ = false;
                 }
                 if (!secondJ && thirdJ && isMoving == false)
@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
                     anim.instance.animator.SetBool("death", true);
                     anim.instance.animator.SetBool("attack", false);
                     isMoving = true;
-                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.5f, player.transform.position.y - 1f, player.transform.position.z), 0.3f));
+                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.7f, player.transform.position.y - 1.2f, player.transform.position.z), 0.3f));
                     thirdJ = false;
                 }
                 if (!thirdJ)

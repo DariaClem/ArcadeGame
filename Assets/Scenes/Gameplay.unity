@@ -1976,6 +1976,7 @@ MonoBehaviour:
   stickPrefab: {fileID: 6293582816740558072, guid: 30244d86fe2ed14449496bdbd4df5acb, type: 3}
   currentCamera: {fileID: 169257881}
   cloudPrefab: {fileID: 0}
+  cloudImage: {fileID: 0}
   rotateTransform: {fileID: 2669066593924323408, guid: 571e52017f8515a40849f027e5acec03, type: 3}
   endRotateTransform: {fileID: 2669066593924323408, guid: 55abde18883a2b54282d9da98e239d7f, type: 3}
   scorePanel: {fileID: 1940660775}
@@ -2030,7 +2031,7 @@ Transform:
   m_GameObject: {fileID: 2146750532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20, y: -0.6795949, z: 0.27377242}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2076,7 +2077,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 722827d139bbbe14bb6510239a1d9f5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
