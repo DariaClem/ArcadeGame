@@ -224,7 +224,10 @@ public class GameManager : MonoBehaviour
 
             yield return x;
 
-            CreatePlatform();
+            if (canBuild)
+            {
+                CreatePlatform();
+            }
             SetRandomSize(nextPillar);
             currentState = GameState.INPUT;
             Vector3 stickPosition = currentPillar.transform.position;
