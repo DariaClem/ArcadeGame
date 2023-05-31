@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     private Vector2 minMaxRange, spawnRange;
 
     [SerializeField]
-    private GameObject pillarPrefab, playerPrefab, stickPrefab, currentCamera, cloudPrefab;
+    private GameObject pillarPrefab, playerPrefab, stickPrefab, currentCamera, cloudPrefab, cloudImage;
 
     [SerializeField]
     private Transform rotateTransform, endRotateTransform;
@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour
 
     private float cameraOffsetX, backgroundOffsetX;
 
-    private bool backOffsetStored, canBuild;
+    private bool backOffsetStored, canBuild, isMoving;
+    private bool firstJ, secondJ, thirdJ;
 
     private GameState currentState;
 
@@ -59,6 +60,12 @@ public class GameManager : MonoBehaviour
         cloudPrefab = GameObject.FindWithTag("Cloud");
         canBuild = true;
 
+        cloudImage = GameObject.FindWithTag("CloudImage");
+
+        isMoving = false;
+        firstJ = true;
+        secondJ = true;
+        thirdJ = true;
 
         if(instance == null)
         {
@@ -87,7 +94,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-       
+
        
     }
     private void Update()
@@ -109,6 +116,36 @@ public class GameManager : MonoBehaviour
 
                 currentState = GameState.GROWING;
                 ScaleStick();
+            }
+            if(!canBuild)
+            {
+                if (firstJ)
+                {
+                    cloudImage.transform.position = new Vector3(player.transform.position.x + 5.4f, player.transform.position.y - 0.47f, player.transform.position.z);
+                    anim.instance.animator.SetBool("attack", true);
+                    isMoving = true;
+                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 2.1f, player.transform.position.y + 2.1f, player.transform.position.z), 0.25f));
+                    firstJ = false;
+                }
+
+                if (!firstJ && secondJ && isMoving == false)
+                {
+                    isMoving = true;
+                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.5f, player.transform.position.y + 1f, player.transform.position.z), 0.3f));
+                    secondJ = false;
+                }
+                if (!secondJ && thirdJ && isMoving == false)
+                {
+                    anim.instance.animator.SetBool("death", true);
+                    anim.instance.animator.SetBool("attack", false);
+                    isMoving = true;
+                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.5f, player.transform.position.y - 1f, player.transform.position.z), 0.3f));
+                    thirdJ = false;
+                }
+                if (!thirdJ)
+                {
+                    anim.instance.animator.SetBool("death", true);
+                }
             }
         }
 
@@ -287,6 +324,7 @@ public class GameManager : MonoBehaviour
     public void CloudAccessed()
     {
         canBuild = false;
+        //anim.instance.animator.SetBool("attack", true);
     }
 
 
@@ -329,6 +367,8 @@ public class GameManager : MonoBehaviour
             backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX - 2, backgrounds.transform.position.y, backgrounds.transform.position.z);
             yield return null;
         }
+
+        isMoving = false;
     }
 
     IEnumerator Rotate(Transform currentTransform, Transform target, float time)

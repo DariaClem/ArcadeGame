@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: penguin_walk
-  serializedVersion: 6
+  serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -53,6 +53,7 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+      isIntCurve: 0
     pptrCurveMapping:
     - {fileID: 21300000, guid: dff6bb17b24945d428995c019750f524, type: 3}
     - {fileID: 21300000, guid: c7bf2343067bbe94eb1be7596f0c61eb, type: 3}
