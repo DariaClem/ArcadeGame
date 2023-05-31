@@ -1,20 +1,10 @@
 # ArcadeGame
 
-[English :eu:](#pengutrip-eu)
-
 [Română :romania:](#pengutrip-romania)
 
+[English :eu:](#pengutrip-eu)
+
 ![prezentare8](https://user-images.githubusercontent.com/91901282/236703372-da5be053-dbe5-4ab5-8c81-aadc0411feab.png)
-
-# PenguTrip :eu:
-
-### Description
-
-The Ultimate Pengu Adventure
-
-Embark on a journey of a lifetime with Pengu as he searches for his lost map. Build bridges, jump on clouds and over dangerous gaps to discover the mysteries of this amazing world.
-
-But remember, sometimes the journey is more important than the destination. Are you ready to join Pengu on his epic quest?
 
 # PenguTrip :romania:
 
@@ -30,7 +20,7 @@ Pagina oficială a jocului: https://dariaclem.github.io/Presentation-Site-PenguT
 
 ### Informații
 
-Proiectul constă în crearea unui joc arcade. Jocul este de tipul highscore. Scopul jocului este de a obține un scor cât mai mare, evitând obstacolele de pe parcurs. Dacă personajul va cădea de pe hartă, scorul va fi resetat.
+Proiectul constă în crearea unui joc arcade. Scopul jocului este de a obține un scor cât mai mare, evitând obstacolele de pe parcurs. Dacă personajul va cădea de pe hartă, scorul va fi resetat.
 
 Pe parcursul jocului, vor apărea obiecte care vor modifica modul de joc atunci când sunt colectate, oferind utilizatorului o experiență a mai multor jocuri consacrate, într-o formă modernă.
 
@@ -51,4 +41,34 @@ Pe parcursul jocului, vor apărea obiecte care vor modifica modul de joc atunci 
 
 ![diagrama](https://github.com/DariaClem/ArcadeGame/assets/91901282/16556d0e-4270-4d62-8faa-5b2cb7fdfcff)
 
+# PenguTrip :eu:
+
+### Description
+
+The Ultimate Pengu Adventure
+
+Embark on a journey of a lifetime with Pengu as he searches for his lost map. Build bridges, jump on clouds and over dangerous gaps to discover the mysteries of this amazing world.
+
+But remember, sometimes the journey is more important than the destination. Are you ready to join Pengu on his epic quest?
+
+### Information
+The project consists of creating an arcade game. The goal of the game is to achieve the highest score possible by avoiding obstacles along the way. If the character falls off the map, the score will be reset.
+
+Throughout the game, there will be objects that will modify the gameplay when collected, providing the user with an experience of multiple popular games in a modern form.
+
+### User stories
+1. As a player, I want to be able to control the character using the A, D, and space keys so that I can avoid obstacles and achieve a high score.
+2. As a player, I want to see my current score in real-time so that I know how well I'm doing in the game.
+3. As a player, I want to be able to collect objects along the way to change the gameplay.
+4. As a player, I want to see my highscore so that I can try to surpass my own score.
+5. As a player, I want to receive rewards in the game when I achieve certain objectives, such as reaching a minimum score or a specific level.
+6. As a player, I want to be able to customize the game's appearance, such as the background.
+7. As a player, I want the progress in the game to be saved so that I can resume the game where I left off and not lose my score and rewards.
+8. As a player, I want to explore different game modes so that I can have variety and discover new challenges and surprises.
+9. As a player, I want to follow the story of the penguin in search of its map so that the game doesn't become monotonous.
+10. As a new player, I want to have access to an informative tutorial before starting the game so that I understand the objectives and available abilities to have an enjoyable experience.
+
+### Diagram
+
+![diagrama](https://github.com/DariaClem/ArcadeGame/assets/91901282/16556d0e-4270-4d62-8faa-5b2cb7fdfcff)
 
