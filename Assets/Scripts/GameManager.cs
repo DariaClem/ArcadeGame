@@ -53,19 +53,19 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     private void Awake()
     {
-        backgrounds = GameObject.FindWithTag("Backgrounds");
-        backOffsetStored = false;
+        backgrounds = GameObject.FindWithTag("Backgrounds");                                    //Atribuim variabile backgrounds obiectul cu care care are tag-ul backgrounds
+        backOffsetStored = false;                                                               //Specificam faptul ca nu am stocat offset-ul pentru background-uri
  
-        cloudPrefab = GameObject.FindWithTag("Cloud");
-        canBuild = true;
+        cloudPrefab = GameObject.FindWithTag("Cloud");                                          //Atribuim obiectul cu tag-ul "Cloud" care este defapt pastila
+        canBuild = true;                                                                        //Specificam faptul ca putem construi
 
-        cloudImage = GameObject.FindWithTag("CloudImage");
+        cloudImage = GameObject.FindWithTag("CloudImage");                                      //cloudImage este obiectul care va tine imaginea cu norul
 
-        audioSource = GameObject.FindWithTag("AudioBuildingBridge").GetComponent<AudioSource>();
+        audioSource = GameObject.FindWithTag("AudioBuildingBridge").GetComponent<AudioSource>();    //gasim obiectul care contine sunetul
 
-        isMoving = false;
-        firstJ = true;
-        secondJ = true;
+        isMoving = false;                                                                       //variabilele pentru animatie cu norul
+        firstJ = true;                                                                          //pozitia pe care o sa o aiba pinguinul in animatia
+        secondJ = true;                                                                         //cu norul va fi setata din cod
         thirdJ = true;
 
         if(instance == null)
@@ -83,13 +83,13 @@ public class GameManager : MonoBehaviour
         scorePanel.SetActive(false);
 
         score = 0;
-        highScore = PlayerPrefs.HasKey("HighScore") ? PlayerPrefs.GetInt("HighScore") : 0;
+        highScore = PlayerPrefs.HasKey("HighScore") ? PlayerPrefs.GetInt("HighScore") : 0;              //obiectul pentru highscore
 
-        scoreText.text = score.ToString();
+        scoreText.text = score.ToString();                                                              //string-uri pentru highscore
         highScoreText.text = highScore.ToString();
 
-        CreateStartObjects();
-        cameraOffsetX = currentCamera.transform.position.x - player.transform.position.x;
+        CreateStartObjects();                                                                           //cream obiectele de start
+        cameraOffsetX = currentCamera.transform.position.x - player.transform.position.x;               //calculam offset-ul pentru camera
 
         GameStart();
     }
@@ -335,9 +335,9 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        scorePanel.SetActive(true);
+        scorePanel.SetActive(true);                         //activam panel-ul pentru scor
 
-        CreatePlatform();
+        CreatePlatform();                                   //cream prima platforma 
         SetRandomSize(nextPillar);
         currentState = GameState.INPUT;
         
