@@ -70,5 +70,5 @@ Throughout the game, there will be objects that will modify the gameplay when co
 
 ### Diagram
 
-![diagrama](https://github.com/DariaClem/ArcadeGame/assets/91901282/16556d0e-4270-4d62-8faa-5b2cb7fdfcff)
+![workflowDiagram](https://github.com/DariaClem/ArcadeGame/assets/91968875/06075ce1-0784-4911-8427-e12b13eb4734)
 
