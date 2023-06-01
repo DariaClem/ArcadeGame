@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
     public AudioSource audioSource;
-    public AudioClip lineSound;
     private void Awake()
     {
         backgrounds = GameObject.FindWithTag("Backgrounds");
@@ -61,6 +60,8 @@ public class GameManager : MonoBehaviour
         canBuild = true;
 
         cloudImage = GameObject.FindWithTag("CloudImage");
+
+        audioSource = GameObject.FindWithTag("AudioBuildingBridge").GetComponent<AudioSource>();
 
         isMoving = false;
         firstJ = true;
@@ -113,7 +114,7 @@ public class GameManager : MonoBehaviour
         {
             if(Input.GetMouseButton(0) && canBuild)
             { 
-
+                audioSource.Play();
                 currentState = GameState.GROWING;
                 ScaleStick();
             }
@@ -155,10 +156,10 @@ public class GameManager : MonoBehaviour
             {
 
                 ScaleStick();
-                audioSource.PlayOneShot(lineSound);
             }
             else
             {
+                audioSource.Stop();
                 StartCoroutine(FallStick());
             }
         }
