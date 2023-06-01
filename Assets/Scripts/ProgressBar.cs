@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +12,7 @@ public class ProgressBar : MonoBehaviour
     private float _targetProgress = 0.1f;
     public TMP_Text range;
     public TMP_Text level;
+    public ParticleSystem fireworks;
     
     private void Awake()
     {
@@ -29,11 +28,13 @@ public class ProgressBar : MonoBehaviour
         int currentScore = PlayerPrefs.GetInt("currentScore");
         int playerScore = logic.playerScore;
 
+        // Afisam XP-ul jucatorului din XP-ul total necesar pentru a avansa la urmatorul nivel 
         range.text = currentScore + "/" + requiredXp;
         level.text = (currentLevel + 1).ToString();
         
         if (requiredXp <= currentScore + playerScore)
         {
+            // Cat timp jucatorul a obtinut un scor mai mare decat necesarul pentru a avansa la urmatorul nivel, crestem nivelul acestuia
             while (requiredXp <= currentScore + playerScore)
             {
                 currentLevel++;
@@ -43,20 +44,28 @@ public class ProgressBar : MonoBehaviour
                 currentScore = 0;
             }
 
+            // Setam nivelul si scorul curent al jucatorului
             PlayerPrefs.SetInt("currentLevel", currentLevel);
+            
+            // Animatie
+            fireworks.gameObject.SetActive(true);
+            fireworks.Play();
+            
             PlayerPrefs.SetInt("currentScore", playerScore);
         }
         else
         {
+            // Setam scorul curent al jucatorului
             PlayerPrefs.SetInt("currentScore", currentScore + playerScore);
         }
         
-
+        // Configuram sliderul ce va afisa scorul curent din punctajul total pentru a avansa
         _slider.value = (float) currentScore / requiredXp;
         float increment = (float) playerScore / requiredXp;
         
         IncrementProgress(increment);
         
+        // Recalculam XP-ul jucatorului din XP-ul total necesar pentru a avansa la urmatorul nivel 
         level.text = (currentLevel + 1).ToString();
         range.text = Math.Min(requiredXp, currentScore + playerScore) + "/" + requiredXp;
     }
@@ -65,6 +74,7 @@ public class ProgressBar : MonoBehaviour
     {
         if (logic.playerScore != 0)
         {
+            // Pornim animatia sliderului
             if (_slider.value < _targetProgress)
             {
                 _slider.value += fillSpeed * Time.unscaledDeltaTime;
@@ -83,6 +93,8 @@ public class ProgressBar : MonoBehaviour
         _targetProgress = _slider.value + newProgress;
     }
 
+    // Functie ce calculeaza XP-ul necesar pentru a avansa la urmatorul nivel dupa formula de calcul preluata de pe site-ul
+    // https://oldschool.runescape.wiki/w/Experience si anume (1/4) * [Sum 1<=l<=L-1 (l + 300 * 2^(l/7)]
     public static int CalculateRequiredXp(int currentLevel)
     {
         int requiredXp = 0;

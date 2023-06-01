@@ -6,6 +6,17 @@ TagManager:
   tags:
   - Logic
   - PenguinWithFeather
+  - Backgrounds
+  - Cloud
+  - Platform
+  - FxTemporaire
+  - AudioBuildingBridge
+  - CloudImage
+  - ScoreText
+  - ManagerGame
+  - Canvas
+  - SoundMusic
+  - AudioMenu
   layers:
   - Default
   - TransparentFX

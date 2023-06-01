@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,13 @@ public class InGameButtons : MonoBehaviour
 {
     public AudioSource music;
     public AudioSource penguinJumpSound;
+    public PenguinScript penguinScript;
+    
+
+    public void Start()
+    {
+        music = GameObject.FindGameObjectWithTag("SoundMusic").GetComponent<AudioSource>();
+    }
 
     public void Volume()
     {

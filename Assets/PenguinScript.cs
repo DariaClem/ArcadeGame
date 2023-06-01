@@ -10,6 +10,7 @@ public class PenguinScript : MonoBehaviour
     public float jumpStrength;
     public int jumpCount;
     public ScriptCamera mainCamera;
+    public GameObject tutorial;
 
     [SerializeField] Transform groundCheckCollider;
     [SerializeField] LayerMask groundCheckLayerMask;
@@ -31,6 +32,7 @@ public class PenguinScript : MonoBehaviour
         jumpCount = 0;
         gameObject.name = "Penguin";
         firstJump = false;
+        tutorial.gameObject.SetActive(true);
     }
 
     void Update()
@@ -57,6 +59,7 @@ public class PenguinScript : MonoBehaviour
         // daca este prima saritura incepe camera sa urce
         if (firstJump == false)
         {
+            tutorial.gameObject.SetActive(false);
             firstJump = true;
             mainCamera.startMoving();
         }

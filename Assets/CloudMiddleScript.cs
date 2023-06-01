@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,22 +21,27 @@ public class CloudMiddleScript : MonoBehaviour
 
     void Update()
     {
+        // La final camera se va opri astfel incat pana sa fie in centrul ecranului
+        if (mainCamera.transform.position.y > 75)
+        {
+            mainCamera.MovementSpeed = 0;
+        }
         // daca scorul jucatorului se produc modificari asupra vitezei de miscare a camerei
-        if (logic.playerScore == 5)
+        if (logic.scoreForClouds == 5)
         {
             mainCamera.MovementSpeed = (float)1.5;
         }
-        else if (logic.playerScore == 10){
+        else if (logic.scoreForClouds == 10){
             mainCamera.MovementSpeed = (float)1.75;
         }
-        else if (logic.playerScore == 15) {
+        else if (logic.scoreForClouds == 15) {
             mainCamera.MovementSpeed = 2; 
         }
-        else if (logic.playerScore == 20)
+        else if (logic.scoreForClouds == 20)
         {
             mainCamera.MovementSpeed = (float)2.5;
         }
-        else if (logic.playerScore == 25)
+        else if (logic.scoreForClouds == 25)
         {
             mainCamera.MovementSpeed = (float)3.5;
             if (mainCamera.transform.position.y > 75)

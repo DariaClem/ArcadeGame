@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -18,7 +14,7 @@ public class MenuManager : MonoBehaviour
         penguinScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinScript>();
     }
     
-
+    // Functie de repornire a jocului
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
@@ -27,6 +23,7 @@ public class MenuManager : MonoBehaviour
         GameIsPaused = false;
     }
 
+    // Functie de oprire a jocului
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
@@ -35,6 +32,7 @@ public class MenuManager : MonoBehaviour
         GameIsPaused = true;
     }
 
+    // Functia afiseaza scorul obtinut intr-o sesiune de joc
     public void Score(int score)
     {
         pointsText.text = score.ToString() + " POINTS";
