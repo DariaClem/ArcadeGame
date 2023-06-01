@@ -138,13 +138,13 @@ public class GameManager : MonoBehaviour
                 if (!secondJ && thirdJ && isMoving == false)
                 {
                     anim.instance.animator.SetBool("death", true);
-                    anim.instance.animator.SetBool("attack", false);
                     isMoving = true;
                     StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.7f, player.transform.position.y - 1.2f, player.transform.position.z), 0.3f));
                     thirdJ = false;
                 }
-                if (!thirdJ)
+                if (!thirdJ && isMoving == false)
                 {
+                    anim.instance.animator.SetBool("attack", false);
                     anim.instance.animator.SetBool("death", false);
                 }
             }
