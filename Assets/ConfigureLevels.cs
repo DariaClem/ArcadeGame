@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class ConfigureLevels : MonoBehaviour
 {
-    // Start is called before the first frame update
-    
     void Start()
     {
+        // Se configureaza nivelul, scorul si punctajul default pentru un utilizator care se joaca pentru prima data
         if (!PlayerPrefs.HasKey("currentLevel"))
         {
             PlayerPrefs.SetInt("currentLevel", 0);

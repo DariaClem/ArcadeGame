@@ -13,7 +13,6 @@ public class SelectButtons : MonoBehaviour
     public GameObject zone;
     public GameObject lockObj;
 
-    // Start is called before the first frame update
     void SetActiveSelectButton()
     {
         button.interactable = true;
@@ -21,15 +20,5 @@ public class SelectButtons : MonoBehaviour
         button.gameObject.SetActive(true);
 
         PlayerPrefs.SetString("lastAnimation", animZone.gameObject.name);
-        
-        /*count++;
-
-        if (count > 0)
-        {
-            lockObj.gameObject.SetActive(false);
-            animLock.enabled = false;
-        
-            
-        }*/
     }
 }

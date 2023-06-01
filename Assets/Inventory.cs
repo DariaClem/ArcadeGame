@@ -19,17 +19,20 @@ public class Inventory : MonoBehaviour
     public GameObject goldenPlains;
     public GameObject echoLake;
 
-    // Start is called before the first frame update
     void Start()
     {
         int currentLevel = PlayerPrefs.GetInt("currentLevel")+1;
         int requiredXp = ProgressBar.CalculateRequiredXp(currentLevel-1);
         int currentScore = PlayerPrefs.GetInt("currentScore");
 
+        // Afisam scorul jucatorului din punctajul necesar pentru a avansa la urmatorul nivel
         range.text = currentScore + "/" + requiredXp;
         level.text = (currentLevel).ToString();
 
         int count = 0;
+        // Verificam in functie de nivelul curent al jucatorului ce background-uri poate selecta
+        // Se parcurg background-urile in ordinea din scene, astfel incat count-ul verifica sa se testeze conditia pentru 
+        // nivel doar pentru background-ul corespunzator. 
         foreach (Transform t in selectButtons.transform) {
             if (t.parent == selectButtons.transform)
             {

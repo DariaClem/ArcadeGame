@@ -336,6 +336,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11500000, guid: 483f621f50bce4e4cb8a527e250c56fb, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: 
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &23811027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2168,7 +2180,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1351970115}
   m_FillRect: {fileID: 1116902844}
   m_HandleRect: {fileID: 1351970114}
@@ -6936,6 +6948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1869113fca05b9c418d1c2e82be96e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManagerScript: {fileID: 0}
+  audioMenu: {fileID: 0}
 --- !u!224 &1655987605
 RectTransform:
   m_ObjectHideFlags: 0

@@ -6,10 +6,10 @@ using UnityEngine;
 public class ScriptCamera : MonoBehaviour
 {
     public float MovementSpeed;
-
-    // pozitia de start a camerei
+    
     void Start()
     {
+        // Pozitia de start a camerei
         transform.position = transform.position + (Vector3.up * 0);
         MovementSpeed = (float)0;
     }
@@ -19,10 +19,10 @@ public class ScriptCamera : MonoBehaviour
         MovementSpeed = (float)1.25;
         Update();
     }
-
-    // modific pozitia camerei
+    
     void Update()
     {
+        // modific pozitia camerei
         transform.position = transform.position + (Vector3.up * MovementSpeed) * Time.deltaTime;
     }
 }
