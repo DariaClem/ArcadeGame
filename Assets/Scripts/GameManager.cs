@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
                 }
                 if (!thirdJ)
                 {
-                    anim.instance.animator.SetBool("death", true);
+                    anim.instance.animator.SetBool("death", false);
                 }
             }
         }
@@ -224,17 +224,18 @@ public class GameManager : MonoBehaviour
 
             yield return x;
 
+
+            currentState = GameState.INPUT;
             if (canBuild)
             {
                 CreatePlatform();
+                SetRandomSize(nextPillar);
+                Vector3 stickPosition = currentPillar.transform.position;
+                stickPosition.x += currentPillar.transform.localScale.x * 0.5f - 0.05f;
+                stickPosition.y = currentStick.transform.position.y;
+                stickPosition.z = currentStick.transform.position.z;
+                currentStick = Instantiate(stickPrefab, stickPosition, Quaternion.identity);
             }
-            SetRandomSize(nextPillar);
-            currentState = GameState.INPUT;
-            Vector3 stickPosition = currentPillar.transform.position;
-            stickPosition.x += currentPillar.transform.localScale.x * 0.5f - 0.05f;
-            stickPosition.y = currentStick.transform.position.y;
-            stickPosition.z = currentStick.transform.position.z;
-            currentStick = Instantiate(stickPrefab, stickPosition, Quaternion.identity);
         }
     }
 
