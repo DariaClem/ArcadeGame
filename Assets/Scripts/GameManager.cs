@@ -75,25 +75,9 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        
-        logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        logicManager = GameObject.FindGameObjectWithTag("Logic");
-        backgrounds = GameObject.FindWithTag("Backgrounds");
-        audioMenu = GameObject.FindGameObjectWithTag("AudioMenu").GetComponent<AudioSource>();
-        audioMenu.mute = true;
-        backOffsetStored = false;
- 
-        cloudPrefab = GameObject.FindWithTag("Cloud");
-        canBuild = true;
 
-        cloudImage = GameObject.FindWithTag("CloudImage");
-
-        audioSource = GameObject.FindGameObjectWithTag("AudioBuildingBridge").GetComponent<AudioSource>();
-
-        isMoving = false;
-        firstJ = true;
-        secondJ = true;
-        thirdJ = true;
+        configureObjectsTags();
+        configureSwitches();
 
         if(instance == null)
         {
@@ -119,6 +103,34 @@ public class GameManager : MonoBehaviour
         GameStart();
     }
     
+    private void configureObjectsTags()
+    {
+        logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        logicManager = GameObject.FindGameObjectWithTag("Logic");
+
+        backgrounds = GameObject.FindWithTag("Backgrounds");
+
+        audioMenu = GameObject.FindGameObjectWithTag("AudioMenu").GetComponent<AudioSource>();
+        audioSource = GameObject.FindGameObjectWithTag("AudioBuildingBridge").GetComponent<AudioSource>();
+
+        cloudPrefab = GameObject.FindWithTag("Cloud");
+        cloudImage = GameObject.FindWithTag("CloudImage");
+        
+    }
+
+    private void configureSwitches()
+    {
+        audioMenu.mute = true;
+        backOffsetStored = false;
+         
+        canBuild = true;
+        
+        isMoving = false;
+        firstJ = true;
+        secondJ = true;
+        thirdJ = true;
+    }
+
     private void Update()
     {
 
