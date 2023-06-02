@@ -41,8 +41,7 @@ public class GameManager : MonoBehaviour
 
     private float cameraOffsetX, backgroundOffsetX;
 
-    private bool canBuild, isMoving;
-    private bool firstJ, secondJ, thirdJ;
+    private bool canBuild;
 
     private GameState currentState;
     
@@ -77,7 +76,9 @@ public class GameManager : MonoBehaviour
         }
 
         configureObjectsTags();
-        configureSwitches();
+
+        audioMenu.mute = true; 
+        canBuild = true;
 
         if(instance == null)
         {
@@ -118,18 +119,6 @@ public class GameManager : MonoBehaviour
         cloudPrefab = GameObject.FindWithTag("Cloud");
         cloudImage = GameObject.FindWithTag("CloudImage");
         
-    }
-
-    private void configureSwitches()
-    {
-        audioMenu.mute = true;
-         
-        canBuild = true;
-        
-        isMoving = false;
-        firstJ = true;
-        secondJ = true;
-        thirdJ = true;
     }
 
     private void Update()
@@ -354,8 +343,6 @@ public class GameManager : MonoBehaviour
             backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX - 2, backgrounds.transform.position.y, backgrounds.transform.position.z);
             yield return null;
         }
-
-        isMoving = false;
     }
 
     IEnumerator Rotate(Transform currentTransform, Transform target, float time)
