@@ -264,26 +264,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //void Pillar()
-    //{  
-    //    CreatePlatform();
-    //    for (int i = 0; i < PillerPrefab; i++)
-    //    {
-    //        var currentPlatform = Instantiate(pillarPrefab);
-    //        currentPillar = nextPillar == null ? currentPlatform : nextPillar;
-    //        nextPillar = currentPlatform;
-    //        currentPlatform.transform.position = pillarPrefab.transform.position + startPos;
-    //        Vector3 tempDistance = new Vector3(Random.Range(spawnRange.x, spawnRange.y) + currentPillar.transform.localScale.x * 0.5f, 0, 0);
-    //        startPos += tempDistance;
 
-    //        if (Random.Range(0, 10) == 0)
-    //        {
-    //            Vector3 tempPos = currentPlatform.transform.position;
-    //        }
-
-
-    //    }
-    //}
     void CreateStartObjects()
     {
         CreatePlatform(false);
