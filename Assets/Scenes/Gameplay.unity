@@ -11859,7 +11859,7 @@ MonoBehaviour:
   logicManager: {fileID: 0}
   PillerPrefab: 100
   stickIncreaseSpeed: 5
-  maxStickSize: 13
+  maxStickSize: 8
   audioSource: {fileID: 1530961396}
   ScoreSO: {fileID: 11400000, guid: a29ea19684dd4d145b4760b330053789, type: 2}
   audioMenu: {fileID: 0}
