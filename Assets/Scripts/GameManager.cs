@@ -216,7 +216,7 @@ public class GameManager : MonoBehaviour
             UpdateScore();
 
             movePosition = player.transform.position;
-            movePosition.x = nextPillar.transform.position.x + nextPillar.transform.localScale.x * 0.5f - 0.35f - 1.1f;
+            movePosition.x = nextPillar.transform.position.x + nextPillar.transform.localScale.x * 0.5f - 1.45f;
             yield return Move(player.transform, movePosition, 0.2f);
             anim.instance.animator.SetBool("walk", false);
 
