@@ -159,7 +159,9 @@ public class GameManager : MonoBehaviour
             currentState = GameState.NONE;
         }
 
-        //
+        // in cazul in care platforma e in crestere
+        // verificam daca platforma trebuie sa creasca in continuare(este apasata tasta space)
+        // sau trebuie sa cada(nu mai este apasata tasta space)
         if(currentState == GameState.GROWING)
         {
             if(Input.GetKey("space"))
@@ -175,6 +177,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // aici crestem podul (pe verticala)
     void ScaleStick()
     {
         Vector3 tempScale = currentStick.transform.localScale;
@@ -185,6 +188,8 @@ public class GameManager : MonoBehaviour
        
     }
 
+
+    // intreg-ul "movement" al pinguinului pentru a sari pe nor odata ce a ajuns pe platforma DUPA ce a luat pastila
     IEnumerator JumpOnCloud()
     {
         cloudImage.transform.position = new Vector3(player.transform.position.x + 6.65f, player.transform.position.y + 1.1f, player.transform.position.z);
@@ -203,16 +208,22 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
+
+    //functia care este apelata odata ce norul trebuie sa cada
     IEnumerator FallStick()
-    {
+    {   
+        //incepem o alta corutina in care rotim podul
         yield return Rotate(currentStick.transform, rotateTransform, 0.4f);
 
+        //calculam pozitia finala a "player"-ului dupa ce podul a cazut si il mutam acolo
+        //adica facem pinguinul sa mearga pe pod
         Vector3 movePosition = currentStick.transform.position + new Vector3(currentStick.transform.localScale.y,0,0);
         movePosition.y = player.transform.position.y;
-
         anim.instance.animator.SetBool("walk", true);
         yield return Move(player.transform,movePosition,0.35f + 0.16f * currentStick.transform.localScale.y);
 
+        //odata ce "player"-ul a mers pe pod, verificam daca se afla
+        //pe o platforma (adica se afla in coliziune cu platforma)
         var results = Physics2D.RaycastAll(player.transform.position,Vector2.down);
         var result = Physics2D.Raycast(player.transform.position, Vector2.down);
         foreach (var temp in results)
@@ -223,6 +234,8 @@ public class GameManager : MonoBehaviour
              
             }
         }
+        //odata ce nu se afla in coliziune cu platforma, setam animatia de cadere si
+        //si gravitatia (pentru ca player-ul sa cada), iar jocul ia sfarsit
         if(!result || !result.collider.CompareTag("Platform"))
         {
             anim.instance.animator.SetBool("death", true);
@@ -234,19 +247,27 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            //in cazul in care a ajuns pe o platforma modificam scorul
             UpdateScore();
 
+            //apoi mutam player-ul la o pozitia fixa pe platforma
+            //(asta pentru a putea construi poduri intrucat in cazul in care pinguinul sa afla la marginea dreapta a platformei
+            //podul care urma sa se construiesca ar fi fost acoperit de pinguin)
             movePosition = player.transform.position;
             movePosition.x = nextPillar.transform.position.x + nextPillar.transform.localScale.x * 0.5f - 1.45f;
             yield return Move(player.transform, movePosition, 0.2f);
             anim.instance.animator.SetBool("walk", false);
 
+
+            //mutam camera mai in dreapta
             movePosition = currentCamera.transform.position;
             movePosition.x = player.transform.position.x + cameraOffsetX;
             yield return Move(currentCamera.transform, movePosition, 0.5f);
 
 
-            
+            //in cazul in care inca se poate construi (nu a fost colectata o pastila)
+            //se creaza urmatoarea platforma, iar jocul incepe sa accepte din nou input-ul
+            //utilizatorului
             if (canBuild)
             {
                 currentState = GameState.INPUT;
@@ -261,12 +282,15 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                //in cazul in care a fost colectata pastila
+                //jocul isi pregateste state-ul astfel incat sa sara pe nor
                 currentState = GameState.JUMPCLOUD;
             }
         }
     }
 
-
+    //cream obiectele de start:
+    //instantiam player-ul si podul si cream platforma initiala
     void CreateStartObjects()
     {
         CreatePlatform();
@@ -285,13 +309,19 @@ public class GameManager : MonoBehaviour
 
     void CreatePlatform()
     {
+        //cream platforma
         var currentPlatform = Instantiate(pillarPrefab);
         currentPillar = nextPillar == null ? currentPlatform : nextPillar;
         nextPillar = currentPlatform;
         currentPlatform.transform.position = pillarPrefab.transform.position + startPos;
+        //setam distanta la care platforma sa fie generata(o distanta random intr-un anumit range)
         Vector3 tempDistance = new Vector3(Random.Range(spawnRange.x,spawnRange.y) + currentPillar.transform.localScale.x*0.5f,0,0);
         startPos += tempDistance;
 
+
+        //in cazul in care am trecut de 20 de block-uri
+        //avem o sansa de 20% sa se genereza pastila care ne
+        //va duce in al doilea mod de joc
         if(Random.Range(0,4) == 0 && localScore > 20)
         {
             var tempCloud = Instantiate(cloudPrefab);
@@ -301,6 +331,7 @@ public class GameManager : MonoBehaviour
         }
     }
    
+   //randomizarea dimensiunilor platformei
     void SetRandomSize(GameObject pillar)
     {
         var newScale = pillar.transform.localScale;
@@ -310,12 +341,14 @@ public class GameManager : MonoBehaviour
         pillar.transform.localScale = newScale;
     }
 
+    //actualizarea scorului
     void UpdateScore()
     {
         logicScript.addScore();
         localScore += 1;
     }
-
+    
+    //jocul i-a sfarsit, deci afisam meniul de game over impreuna cu scorul
     void GameOver()
     {
         ScoreSO.Value = 0;
@@ -331,12 +364,17 @@ public class GameManager : MonoBehaviour
         highScoreText.text = "HIGHSCORE: " + highScore.ToString();
     }
 
+    //functia apelata odata ce "player"-ul intra in coliziune cu
+    //pastila
     public void CloudAccessed()
     {
         canBuild = false;
     }
 
-
+    //functia pentru a incepe jocul:
+    //este creata prima platforma pe care se spawneaza pinguinul
+    //si starea curenta a jocului este setata astfel incat
+    //sa accepte input-ul utilizatorului
     public void GameStart()
     {
         CreatePlatform();
@@ -345,6 +383,8 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //variabilele referitoare la scena si la scor sunt resetate
+    //pentru ca scena sa fie incarcata din nou
     public void GameRestart()
     {
         ScoreSO.Value = 0;
@@ -354,7 +394,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    //Helper Functions
+    //
     IEnumerator Move(Transform currentTransform,Vector3 target,float time)
     {
         var passed = 0f;
