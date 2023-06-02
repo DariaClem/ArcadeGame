@@ -12,6 +12,10 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
 
+    public AudioSource audioMenu;
+    public AudioSource audioSource;
+    public static GameManager instance;
+
     [SerializeField]
     private Vector3 startPos;
 
@@ -53,15 +57,16 @@ public class GameManager : MonoBehaviour
 
     private int localScore;
 
-    public int PillerPrefab = 100;
+    private int PillerPrefab = 100;
 
     [SerializeField]
     private float stickIncreaseSpeed, maxStickSize;
 
-    public static GameManager instance;
-    public AudioSource audioSource;
-    [SerializeField] private IntSo ScoreSO;
-    public AudioSource audioMenu;
+    
+    
+    [SerializeField] 
+    private IntSo ScoreSO;
+    
     private void Awake()
     {
         // Configuram backgroundul curent in functie de cel selectat de jucator in inventar
