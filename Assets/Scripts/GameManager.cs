@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public enum GameState
 {
-    START,INPUT,GROWING,NONE
+    START,INPUT,GROWING,NONE, JUMPCLOUD
 }
 
 public class GameManager : MonoBehaviour
@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
 
         configureObjectsTags();
 
+        // Configuram switch-urile pe care le folosim in joc
         audioMenu.mute = true; 
         canBuild = true;
 
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        // Initializam toate celelalte obiecte necesare jocului
         currentState = GameState.START;
 
         endPanel.SetActive(false);
@@ -99,13 +101,16 @@ public class GameManager : MonoBehaviour
         highScoreText.text = "HIGHSCORE: " + highScore.ToString();
 
         CreateStartObjects();
-        cameraOffsetX = currentCamera.transform.position.x - player.transform.position.x;
 
+        // pentru camera si background calculam offset-ul (va fi folosit de fiecare data cand mutam camera si background-ul)
+        cameraOffsetX = currentCamera.transform.position.x - player.transform.position.x;
         backgroundOffsetX = backgrounds.transform.position.x;
 
         GameStart();
     }
     
+
+    //asociam obiectele din cod cu tag-urile lor respective din inspector
     private void configureObjectsTags()
     {
         logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
@@ -121,10 +126,13 @@ public class GameManager : MonoBehaviour
         
     }
 
+    // functia update a jocului apelata odata pe frame
     private void Update()
     {
         if(currentState == GameState.INPUT)
         {
+            // in cazul in care jocul asteapta input-ul jucatorului
+            // varificam daca jucatorul apasa space si incepem sa construim stick-ul(podul)
             if(Input.GetKey("space") && canBuild)
             { 
                 tutorial.SetActive(false);
@@ -132,11 +140,12 @@ public class GameManager : MonoBehaviour
                 currentState = GameState.GROWING;
                 ScaleStick();
             }
-            if(!canBuild)
-            {
-                StartCoroutine(JumpOnCloud());
-                currentState = GameState.NONE;
-            }
+        }
+
+        if (currentState == GameState.JUMPCLOUD)
+        {
+            StartCoroutine(JumpOnCloud());
+            currentState = GameState.NONE;
         }
 
         if(currentState == GameState.GROWING)
@@ -306,7 +315,14 @@ public class GameManager : MonoBehaviour
 
     public void CloudAccessed()
     {
-        canBuild = false;
+        startCoroutine(setCloudState());
+    }
+
+    IEnumerator setCloudState()
+    {
+        while (canBuild)
+            yield return null;
+        currentState = GameState.JUMPCLOUD;
     }
 
 
