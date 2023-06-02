@@ -13,7 +13,6 @@ public class MainMenu : MonoBehaviour
         audioManagerScript = GameObject.FindGameObjectWithTag("SoundMusic");
         Destroy(audioManagerScript);
         audioMenu = GameObject.FindGameObjectWithTag("AudioMenu").GetComponent<AudioSource>();
-        Debug.Log(audioMenu);
         audioMenu.mute = false;
         DontDestroyOnLoad(audioMenu);
     }

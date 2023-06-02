@@ -23,7 +23,6 @@ public class LogicScript : MonoBehaviour
     {
         scoreForClouds = 0;
         playerScore = ScoreSO.Value;
-        Debug.Log(ScoreSO.Value);
         scoreText = GameObject.FindWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
         logicManager = GameObject.FindGameObjectWithTag("Logic");
         scoreText.text = ScoreSO.Value.ToString();
