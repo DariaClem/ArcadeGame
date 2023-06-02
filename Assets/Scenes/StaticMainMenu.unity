@@ -1314,6 +1314,7 @@ MonoBehaviour:
   crystalWasteland: {fileID: 2103110240}
   goldenPlains: {fileID: 2020990061}
   echoLake: {fileID: 23743090}
+  slider: {fileID: 501054957}
 --- !u!1 &351295683
 GameObject:
   m_ObjectHideFlags: 0

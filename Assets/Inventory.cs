@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -18,13 +19,16 @@ public class Inventory : MonoBehaviour
     public GameObject crystalWasteland;
     public GameObject goldenPlains;
     public GameObject echoLake;
-
+    public Slider slider;
+    
     void Start()
     {
         int currentLevel = PlayerPrefs.GetInt("currentLevel")+1;
         int requiredXp = ProgressBar.CalculateRequiredXp(currentLevel-1);
         int currentScore = PlayerPrefs.GetInt("currentScore");
 
+        slider.value = (float) currentScore / requiredXp;
+        
         // Afisam scorul jucatorului din punctajul necesar pentru a avansa la urmatorul nivel
         range.text = currentScore + "/" + requiredXp;
         level.text = (currentLevel).ToString();

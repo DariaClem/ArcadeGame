@@ -22,7 +22,6 @@ public class FirstGameManagerMenuScript : MonoBehaviour
         pauseMenuUI.SetActive(false);
         gameManagerScript.enabled = true;
         Time.timeScale = 1f;
-        Debug.Log(Time.timeScale);
         GameIsPaused = false;
     }
 

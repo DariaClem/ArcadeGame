@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
     public LogicScript logic;
-    private Slider _slider;
     public float fillSpeed = 0.5f;
-    private ParticleSystem _particleSystem;
-    private float _targetProgress = 0.1f;
     public TMP_Text range;
     public TMP_Text level;
     public ParticleSystem fireworks;
     
+    private ParticleSystem _particleSystem;
+    private float _targetProgress = 0.1f;
+    private Slider _slider;
+
     private void Awake()
     {
         _slider = gameObject.GetComponent<Slider>();
