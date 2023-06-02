@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject logicManager;
 
+    private int localScore;
+
     public int PillerPrefab = 100;
 
     [SerializeField]
@@ -105,6 +107,7 @@ public class GameManager : MonoBehaviour
         cameraOffsetX = currentCamera.transform.position.x - player.transform.position.x;
         backgroundOffsetX = backgrounds.transform.position.x;
 
+        localScore = 0;
         GameStart();
     }
     
@@ -261,7 +264,7 @@ public class GameManager : MonoBehaviour
 
     void CreateStartObjects()
     {
-        CreatePlatform(false);
+        CreatePlatform();
 
         Vector3 playerPos = playerPrefab.transform.position;
         playerPos.x = playerPos.x + (currentPillar.transform.localScale.x * 0.5f - 0.35f);
@@ -275,7 +278,7 @@ public class GameManager : MonoBehaviour
         currentStick = Instantiate(stickPrefab, stickPos, Quaternion.identity);
     }
 
-    void CreatePlatform(bool spawnCloud = true)
+    void CreatePlatform()
     {
         var currentPlatform = Instantiate(pillarPrefab);
         currentPillar = nextPillar == null ? currentPlatform : nextPillar;
@@ -284,7 +287,7 @@ public class GameManager : MonoBehaviour
         Vector3 tempDistance = new Vector3(Random.Range(spawnRange.x,spawnRange.y) + currentPillar.transform.localScale.x*0.5f,0,0);
         startPos += tempDistance;
 
-        if(Random.Range(0,10) == 0 && spawnCloud)
+        if(Random.Range(0,4) == 0 && localScore > 20)
         {
             var tempCloud = Instantiate(cloudPrefab);
             Vector3 tempPos = currentPlatform.transform.position;
@@ -305,6 +308,7 @@ public class GameManager : MonoBehaviour
     void UpdateScore()
     {
         logicScript.addScore();
+        localScore += 1;
     }
 
     void GameOver()
