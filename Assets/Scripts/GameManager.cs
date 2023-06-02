@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
     public AudioSource audioSource;
-    public AudioClip lineSound;
     [SerializeField] private IntSo ScoreSO;
     public AudioSource audioMenu;
     private void Awake()
