@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public enum GameState
 {
-    START,INPUT,GROWING,NONE, JUMPCLOUD
+    Start, Input, Growing, None, JumpCloud
 }
 
 public class GameManager : MonoBehaviour
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Initializam toate celelalte obiecte necesare jocului
-        currentState = GameState.START;
+        currentState = GameState.Start;
 
         endPanel.SetActive(false);
 
@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
     // functia update a jocului apelata odata pe frame
     private void Update()
     {
-        if(currentState == GameState.INPUT)
+        if(currentState == GameState.Input)
         {
             // in cazul in care jocul asteapta input-ul jucatorului
             // verificam daca jucatorul apasa space si incepem sa construim stick-ul(podul)
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
             { 
                 tutorial.SetActive(false);
                 audioSource.Play();
-                currentState = GameState.GROWING;
+                currentState = GameState.Growing;
                 ScaleStick();
             }
         }
@@ -153,16 +153,16 @@ public class GameManager : MonoBehaviour
 
         // in cazul in care trebuie sa sarim pe nor
         // apelam coroutina care ne va anima pinguinul pentru a sari pe nor
-        if (currentState == GameState.JUMPCLOUD)
+        if (currentState == GameState.JumpCloud)
         {
             StartCoroutine(JumpOnCloud());
-            currentState = GameState.NONE;
+            currentState = GameState.None;
         }
 
         // in cazul in care platforma e in crestere
         // verificam daca platforma trebuie sa creasca in continuare(este apasata tasta space)
         // sau trebuie sa cada(nu mai este apasata tasta space)
-        if(currentState == GameState.GROWING)
+        if(currentState == GameState.Growing)
         {
             if(Input.GetKey("space"))
             {
@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour
             {
                 audioSource.Stop();
                 StartCoroutine(FallStick());
-                currentState = GameState.NONE;
+                currentState = GameState.None;
             }
         }
     }
@@ -270,7 +270,7 @@ public class GameManager : MonoBehaviour
             //utilizatorului
             if (canBuild)
             {
-                currentState = GameState.INPUT;
+                currentState = GameState.Input;
                 CreatePlatform();
                 SetRandomSize(nextPillar);
                 
@@ -284,7 +284,7 @@ public class GameManager : MonoBehaviour
             {
                 //in cazul in care a fost colectata pastila
                 //jocul isi pregateste state-ul astfel incat sa sara pe nor
-                currentState = GameState.JUMPCLOUD;
+                currentState = GameState.JumpCloud;
             }
         }
     }
@@ -379,7 +379,7 @@ public class GameManager : MonoBehaviour
     {
         CreatePlatform();
         SetRandomSize(nextPillar);
-        currentState = GameState.INPUT;
+        currentState = GameState.Input;
         
     }
 
@@ -394,9 +394,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    //
+    //corutina cu care mutam transformarea unui obiect la un anumit "target" intr-un anumit "timp"
     IEnumerator Move(Transform currentTransform,Vector3 target,float time)
     {
+        //la fiecare frame vedem cat timp a trecut si calculam pozitia la care 
+        //trebuie ca transformarea sa se afle la timpul respectiv(intrucat avem variabila "time" care ne indica cat
+        //de mult sa dureze miscarea de mutare)
+        //aplicam noua pozitie transformarii
         var passed = 0f;
         var init = currentTransform.transform.position;
         while(passed < time)
@@ -407,13 +411,22 @@ public class GameManager : MonoBehaviour
             currentTransform.position = current;
 
 
+            //de asemenea actualizam pozitia "backgrounds-urilor"
+            //intrucat cu aceasta functie putem sa mutam si camera
             backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX - 2, backgrounds.transform.position.y, backgrounds.transform.position.z);
+
+            //functia aceasta va fi pusa pe pauza pana la urmatorul frame
             yield return null;
         }
     }
 
+    //corutina cu care rotim podul la un anumit "target" intr-un anumit "timp"
     IEnumerator Rotate(Transform currentTransform, Transform target, float time)
     {
+        //la fiecare frame vedem cat timp a trecut si calculam rotatia la care 
+        //trebuie ca transformarea sa se afle la timpul respectiv(intrucat avem variabila "time" care ne indica cat
+        //de mult sa dureze miscarea de mutare)
+        //aplicam noua rotatie transformarii
         var passed = 0f;
         var init = currentTransform.transform.rotation;
         while (passed < time)
@@ -422,6 +435,8 @@ public class GameManager : MonoBehaviour
             var normalized = passed / time;
             var current = Quaternion.Slerp(init, target.rotation, normalized);
             currentTransform.rotation = current;
+
+            //functia aceasta va fi pusa pe pauza pana la urmatorul frame
             yield return null;
         }
     }
