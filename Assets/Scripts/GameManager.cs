@@ -207,15 +207,13 @@ public class GameManager : MonoBehaviour
     IEnumerator FallStick()
     {
         currentState = GameState.NONE;
-        var x = Rotate(currentStick.transform, rotateTransform, 0.4f);
-        yield return x;
+        yield return Rotate(currentStick.transform, rotateTransform, 0.4f);
 
         Vector3 movePosition = currentStick.transform.position + new Vector3(currentStick.transform.localScale.y,0,0);
         movePosition.y = player.transform.position.y;
 
         anim.instance.animator.SetBool("walk", true);
-        x = Move(player.transform,movePosition,0.35f + 0.16f * currentStick.transform.localScale.y);
-        yield return x;
+        yield return Move(player.transform,movePosition,0.35f + 0.16f * currentStick.transform.localScale.y);
 
         var results = Physics2D.RaycastAll(player.transform.position,Vector2.down);
         var result = Physics2D.Raycast(player.transform.position, Vector2.down);
@@ -231,8 +229,7 @@ public class GameManager : MonoBehaviour
         {
             anim.instance.animator.SetBool("death", true);
             player.GetComponent<Rigidbody2D>().gravityScale = 1f;
-            x = Rotate(currentStick.transform, endRotateTransform, 0.5f);
-            yield return x;
+            yield return Rotate(currentStick.transform, endRotateTransform, 0.5f);
             
 
             GameOver();
@@ -243,16 +240,12 @@ public class GameManager : MonoBehaviour
 
             movePosition = player.transform.position;
             movePosition.x = nextPillar.transform.position.x + nextPillar.transform.localScale.x * 0.5f - 0.35f - 1.1f;
-            x = Move(player.transform, movePosition, 0.2f);
-            yield return x;
+            yield return Move(player.transform, movePosition, 0.2f);
             anim.instance.animator.SetBool("walk", false);
 
             movePosition = currentCamera.transform.position;
             movePosition.x = player.transform.position.x + cameraOffsetX;
-            x = Move(currentCamera.transform, movePosition, 0.5f);
-           
-
-            yield return x;
+            yield return Move(currentCamera.transform, movePosition, 0.5f);
 
 
             currentState = GameState.INPUT;
@@ -280,8 +273,6 @@ public class GameManager : MonoBehaviour
         playerPos.y = playerPos.y + 0.07f;
         player = Instantiate(playerPrefab,playerPos,Quaternion.identity);
         player.name = "Player";
-        //anim.instance.animator.SetBool("walk", false);
-        //anim.instance.animator.SetBool("idle", true);
 
 
         Vector3 stickPos = stickPrefab.transform.position;
@@ -339,7 +330,6 @@ public class GameManager : MonoBehaviour
     public void CloudAccessed()
     {
         canBuild = false;
-        //anim.instance.animator.SetBool("attack", true);
     }
 
 
@@ -371,7 +361,6 @@ public class GameManager : MonoBehaviour
             var normalized = passed / time;
             var current = Vector3.Lerp(init, target, normalized);
             currentTransform.position = current;
-            //anim.instance.animator.SetBool("idle", false);
 
 
             backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX - 2, backgrounds.transform.position.y, backgrounds.transform.position.z);
