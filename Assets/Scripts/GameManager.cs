@@ -134,9 +134,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX - 2, backgrounds.transform.position.y, backgrounds.transform.position.z);
-
-
         if(currentState == GameState.INPUT)
         {
             if(Input.GetKey("space") && canBuild)
@@ -148,34 +145,8 @@ public class GameManager : MonoBehaviour
             }
             if(!canBuild)
             {
-                if (firstJ)
-                {
-                    cloudImage.transform.position = new Vector3(player.transform.position.x + 6.65f, player.transform.position.y + 1.1f, player.transform.position.z);
-                    anim.instance.animator.SetBool("attack", true);
-                    isMoving = true;
-                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 2.3f, player.transform.position.y + 2.3f, player.transform.position.z), 0.25f));
-                    firstJ = false;
-                }
-
-                if (!firstJ && secondJ && isMoving == false)
-                {
-                    isMoving = true;
-                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.7f, player.transform.position.y + 1.2f, player.transform.position.z), 0.3f));
-                    secondJ = false;
-                }
-                if (!secondJ && thirdJ && isMoving == false)
-                {
-                    anim.instance.animator.SetBool("death", true);
-                    anim.instance.animator.SetBool("attack", false);
-                    isMoving = true;
-                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.8f, player.transform.position.y - 1.3f, player.transform.position.z), 0.32f));
-                    thirdJ = false;
-                }
-                if (!thirdJ && isMoving == false)
-                {
-                    anim.instance.animator.SetBool("death", true);
-                    SceneManager.LoadScene(3);
-                }
+                StartCoroutine(JumpOnCloud());
+                currentState = GameState.NONE;
             }
         }
 
@@ -183,13 +154,13 @@ public class GameManager : MonoBehaviour
         {
             if(Input.GetKey("space"))
             {
-                tutorial.SetActive(false);
                 ScaleStick();
             }
             else
             {
                 audioSource.Stop();
                 StartCoroutine(FallStick());
+                currentState = GameState.NONE;
             }
         }
     }
@@ -204,9 +175,26 @@ public class GameManager : MonoBehaviour
        
     }
 
+    IEnumerator JumpOnCloud()
+    {
+        cloudImage.transform.position = new Vector3(player.transform.position.x + 6.65f, player.transform.position.y + 1.1f, player.transform.position.z);
+
+        anim.instance.animator.SetBool("attack", true);
+        yield return StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 2.3f, player.transform.position.y + 2.3f, player.transform.position.z), 0.25f));
+
+        yield return StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.7f, player.transform.position.y + 1.2f, player.transform.position.z), 0.3f));
+
+        anim.instance.animator.SetBool("death", true);
+        anim.instance.animator.SetBool("attack", false);
+        yield return StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.8f, player.transform.position.y - 1.3f, player.transform.position.z), 0.32f));
+
+        anim.instance.animator.SetBool("death", false);
+        yield return null;
+        SceneManager.LoadScene(3);
+    }
+
     IEnumerator FallStick()
     {
-        currentState = GameState.NONE;
         yield return Rotate(currentStick.transform, rotateTransform, 0.4f);
 
         Vector3 movePosition = currentStick.transform.position + new Vector3(currentStick.transform.localScale.y,0,0);
