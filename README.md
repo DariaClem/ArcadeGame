@@ -39,7 +39,7 @@ Pe parcursul jocului, vor apărea obiecte care vor modifica modul de joc atunci 
 
 ### Diagramă
 
-![workflowDiagram](https://github.com/DariaClem/ArcadeGame/assets/91968875/464abd1b-a293-47f2-9037-9f22d03189ea)
+![workflowDiagram](https://github.com/DariaClem/ArcadeGame/assets/91968875/cec3fdc1-8ded-40d5-a34e-9014300a1ca6)
 
 # PenguTrip :eu:
 
@@ -70,5 +70,5 @@ Throughout the game, there will be objects that will modify the gameplay when co
 
 ### Diagram
 
-![workflowDiagram](https://github.com/DariaClem/ArcadeGame/assets/91968875/06075ce1-0784-4911-8427-e12b13eb4734)
+![workflowDiagram](https://github.com/DariaClem/ArcadeGame/assets/91968875/e089f262-7f07-40bf-b53f-39da90010995)
 
