@@ -37,27 +37,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TMP_Text scoreText, scoreEndText, highScoreText;
 
-    private GameObject currentPillar, nextPillar, currentStick, player;
+    [SerializeField]
+    private GameObject tutorial;
 
-    [SerializeField] private GameObject tutorial;
-
-    private int score, highScore;
-
-    private float cameraOffsetX, backgroundOffsetX;
-
-    private bool canBuild;
-
-    private GameState currentState;
-    
     [SerializeField]
     private LogicScript logicScript;
     
     [SerializeField]
     private GameObject logicManager;
-
-    private int localScore;
-
-    private int PillerPrefab = 100;
 
     [SerializeField]
     private float stickIncreaseSpeed, maxStickSize;
@@ -66,6 +53,20 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] 
     private IntSo ScoreSO;
+    private GameObject currentPillar, nextPillar, currentStick, player;
+    private GameState currentState;
+
+
+
+    private int score, highScore;
+    private int localScore;
+
+    private int PillerPrefab = 100;
+
+    private float cameraOffsetX, backgroundOffsetX;
+
+    private bool canBuild;
+
     
     private void Awake()
     {
