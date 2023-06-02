@@ -132,7 +132,8 @@ public class GameManager : MonoBehaviour
         if(currentState == GameState.INPUT)
         {
             // in cazul in care jocul asteapta input-ul jucatorului
-            // varificam daca jucatorul apasa space si incepem sa construim stick-ul(podul)
+            // verificam daca jucatorul apasa space si incepem sa construim stick-ul(podul)
+            // si sa setam noul 
             if(Input.GetKey("space") && canBuild)
             { 
                 tutorial.SetActive(false);
@@ -142,12 +143,16 @@ public class GameManager : MonoBehaviour
             }
         }
 
+
+        // in cazul in care trebuie sa sarim pe nor
+        // apelam coroutina care ne va anima pinguinul pentru a sari pe nor
         if (currentState == GameState.JUMPCLOUD)
         {
             StartCoroutine(JumpOnCloud());
             currentState = GameState.NONE;
         }
 
+        //
         if(currentState == GameState.GROWING)
         {
             if(Input.GetKey("space"))
@@ -234,9 +239,10 @@ public class GameManager : MonoBehaviour
             yield return Move(currentCamera.transform, movePosition, 0.5f);
 
 
-            currentState = GameState.INPUT;
+            
             if (canBuild)
             {
+                currentState = GameState.INPUT;
                 CreatePlatform();
                 SetRandomSize(nextPillar);
                 
@@ -245,6 +251,10 @@ public class GameManager : MonoBehaviour
                 stickPosition.y = currentStick.transform.position.y;
                 stickPosition.z = currentStick.transform.position.z;
                 currentStick = Instantiate(stickPrefab, stickPosition, Quaternion.identity);
+            }
+            else
+            {
+                currentState = GameState.JUMPCLOUD;
             }
         }
     }
@@ -315,14 +325,7 @@ public class GameManager : MonoBehaviour
 
     public void CloudAccessed()
     {
-        startCoroutine(setCloudState());
-    }
-
-    IEnumerator setCloudState()
-    {
-        while (canBuild)
-            yield return null;
-        currentState = GameState.JUMPCLOUD;
+        canBuild = false;
     }
 
 
