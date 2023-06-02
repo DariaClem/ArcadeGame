@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public enum GameState
 {
-    START,INPUT,GROWING,NONE
+    START,INPUT,GROWING,NONE, JUMPCLOUD
 }
 
 public class GameManager : MonoBehaviour
@@ -41,8 +41,7 @@ public class GameManager : MonoBehaviour
 
     private float cameraOffsetX, backgroundOffsetX;
 
-    private bool backOffsetStored, canBuild, isMoving;
-    private bool firstJ, secondJ, thirdJ;
+    private bool canBuild;
 
     private GameState currentState;
     
@@ -59,7 +58,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
     public AudioSource audioSource;
-    public AudioClip lineSound;
     [SerializeField] private IntSo ScoreSO;
     public AudioSource audioMenu;
     private void Awake()
@@ -75,25 +73,12 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        
-        logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        logicManager = GameObject.FindGameObjectWithTag("Logic");
-        backgrounds = GameObject.FindWithTag("Backgrounds");
-        audioMenu = GameObject.FindGameObjectWithTag("AudioMenu").GetComponent<AudioSource>();
-        audioMenu.mute = true;
-        backOffsetStored = false;
- 
-        cloudPrefab = GameObject.FindWithTag("Cloud");
+
+        configureObjectsTags();
+
+        // Configuram switch-urile pe care le folosim in joc
+        audioMenu.mute = true; 
         canBuild = true;
-
-        cloudImage = GameObject.FindWithTag("CloudImage");
-
-        audioSource = GameObject.FindGameObjectWithTag("AudioBuildingBridge").GetComponent<AudioSource>();
-
-        isMoving = false;
-        firstJ = true;
-        secondJ = true;
-        thirdJ = true;
 
         if(instance == null)
         {
@@ -104,6 +89,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        // Initializam toate celelalte obiecte necesare jocului
         currentState = GameState.START;
 
         endPanel.SetActive(false);
@@ -114,25 +100,39 @@ public class GameManager : MonoBehaviour
         highScoreText.text = "HIGHSCORE: " + highScore.ToString();
 
         CreateStartObjects();
+
+        // pentru camera si background calculam offset-ul (va fi folosit de fiecare data cand mutam camera si background-ul)
         cameraOffsetX = currentCamera.transform.position.x - player.transform.position.x;
+        backgroundOffsetX = backgrounds.transform.position.x;
 
         GameStart();
     }
     
+
+    //asociam obiectele din cod cu tag-urile lor respective din inspector
+    private void configureObjectsTags()
+    {
+        logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        logicManager = GameObject.FindGameObjectWithTag("Logic");
+
+        backgrounds = GameObject.FindWithTag("Backgrounds");
+
+        audioMenu = GameObject.FindGameObjectWithTag("AudioMenu").GetComponent<AudioSource>();
+        audioSource = GameObject.FindGameObjectWithTag("AudioBuildingBridge").GetComponent<AudioSource>();
+
+        cloudPrefab = GameObject.FindWithTag("Cloud");
+        cloudImage = GameObject.FindWithTag("CloudImage");
+        
+    }
+
+    // functia update a jocului apelata odata pe frame
     private void Update()
     {
-
-        if (!backOffsetStored)
-        {
-            backOffsetStored = true;
-            backgroundOffsetX = backgrounds.transform.position.x;
-        }
-
-        backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX - 2, backgrounds.transform.position.y, backgrounds.transform.position.z);
-
-
         if(currentState == GameState.INPUT)
         {
+            // in cazul in care jocul asteapta input-ul jucatorului
+            // verificam daca jucatorul apasa space si incepem sa construim stick-ul(podul)
+            // si sa setam noul 
             if(Input.GetKey("space") && canBuild)
             { 
                 tutorial.SetActive(false);
@@ -140,50 +140,29 @@ public class GameManager : MonoBehaviour
                 currentState = GameState.GROWING;
                 ScaleStick();
             }
-            if(!canBuild)
-            {
-                if (firstJ)
-                {
-                    cloudImage.transform.position = new Vector3(player.transform.position.x + 6.65f, player.transform.position.y + 1.1f, player.transform.position.z);
-                    anim.instance.animator.SetBool("attack", true);
-                    isMoving = true;
-                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 2.3f, player.transform.position.y + 2.3f, player.transform.position.z), 0.25f));
-                    firstJ = false;
-                }
-
-                if (!firstJ && secondJ && isMoving == false)
-                {
-                    isMoving = true;
-                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.7f, player.transform.position.y + 1.2f, player.transform.position.z), 0.3f));
-                    secondJ = false;
-                }
-                if (!secondJ && thirdJ && isMoving == false)
-                {
-                    anim.instance.animator.SetBool("death", true);
-                    anim.instance.animator.SetBool("attack", false);
-                    isMoving = true;
-                    StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.8f, player.transform.position.y - 1.3f, player.transform.position.z), 0.32f));
-                    thirdJ = false;
-                }
-                if (!thirdJ && isMoving == false)
-                {
-                    anim.instance.animator.SetBool("death", true);
-                    SceneManager.LoadScene(3);
-                }
-            }
         }
 
+
+        // in cazul in care trebuie sa sarim pe nor
+        // apelam coroutina care ne va anima pinguinul pentru a sari pe nor
+        if (currentState == GameState.JUMPCLOUD)
+        {
+            StartCoroutine(JumpOnCloud());
+            currentState = GameState.NONE;
+        }
+
+        //
         if(currentState == GameState.GROWING)
         {
             if(Input.GetKey("space"))
             {
-                tutorial.SetActive(false);
                 ScaleStick();
             }
             else
             {
                 audioSource.Stop();
                 StartCoroutine(FallStick());
+                currentState = GameState.NONE;
             }
         }
     }
@@ -198,18 +177,33 @@ public class GameManager : MonoBehaviour
        
     }
 
+    IEnumerator JumpOnCloud()
+    {
+        cloudImage.transform.position = new Vector3(player.transform.position.x + 6.65f, player.transform.position.y + 1.1f, player.transform.position.z);
+
+        anim.instance.animator.SetBool("attack", true);
+        yield return StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 2.3f, player.transform.position.y + 2.3f, player.transform.position.z), 0.25f));
+
+        yield return StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.7f, player.transform.position.y + 1.2f, player.transform.position.z), 0.3f));
+
+        anim.instance.animator.SetBool("death", true);
+        anim.instance.animator.SetBool("attack", false);
+        yield return StartCoroutine(Move(player.transform, new Vector3(player.transform.position.x + 1.8f, player.transform.position.y - 1.3f, player.transform.position.z), 0.32f));
+
+        anim.instance.animator.SetBool("death", false);
+        yield return null;
+        SceneManager.LoadScene(3);
+    }
+
     IEnumerator FallStick()
     {
-        currentState = GameState.NONE;
-        var x = Rotate(currentStick.transform, rotateTransform, 0.4f);
-        yield return x;
+        yield return Rotate(currentStick.transform, rotateTransform, 0.4f);
 
         Vector3 movePosition = currentStick.transform.position + new Vector3(currentStick.transform.localScale.y,0,0);
         movePosition.y = player.transform.position.y;
 
         anim.instance.animator.SetBool("walk", true);
-        x = Move(player.transform,movePosition,0.35f + 0.16f * currentStick.transform.localScale.y);
-        yield return x;
+        yield return Move(player.transform,movePosition,0.35f + 0.16f * currentStick.transform.localScale.y);
 
         var results = Physics2D.RaycastAll(player.transform.position,Vector2.down);
         var result = Physics2D.Raycast(player.transform.position, Vector2.down);
@@ -225,8 +219,7 @@ public class GameManager : MonoBehaviour
         {
             anim.instance.animator.SetBool("death", true);
             player.GetComponent<Rigidbody2D>().gravityScale = 1f;
-            x = Rotate(currentStick.transform, endRotateTransform, 0.5f);
-            yield return x;
+            yield return Rotate(currentStick.transform, endRotateTransform, 0.5f);
             
 
             GameOver();
@@ -236,22 +229,19 @@ public class GameManager : MonoBehaviour
             UpdateScore();
 
             movePosition = player.transform.position;
-            movePosition.x = nextPillar.transform.position.x + nextPillar.transform.localScale.x * 0.5f - 0.35f - 1.1f;
-            x = Move(player.transform, movePosition, 0.2f);
-            yield return x;
+            movePosition.x = nextPillar.transform.position.x + nextPillar.transform.localScale.x * 0.5f - 1.45f;
+            yield return Move(player.transform, movePosition, 0.2f);
             anim.instance.animator.SetBool("walk", false);
 
             movePosition = currentCamera.transform.position;
             movePosition.x = player.transform.position.x + cameraOffsetX;
-            x = Move(currentCamera.transform, movePosition, 0.5f);
-           
-
-            yield return x;
+            yield return Move(currentCamera.transform, movePosition, 0.5f);
 
 
-            currentState = GameState.INPUT;
+            
             if (canBuild)
             {
+                currentState = GameState.INPUT;
                 CreatePlatform();
                 SetRandomSize(nextPillar);
                 
@@ -261,29 +251,14 @@ public class GameManager : MonoBehaviour
                 stickPosition.z = currentStick.transform.position.z;
                 currentStick = Instantiate(stickPrefab, stickPosition, Quaternion.identity);
             }
+            else
+            {
+                currentState = GameState.JUMPCLOUD;
+            }
         }
     }
 
-    //void Pillar()
-    //{  
-    //    CreatePlatform();
-    //    for (int i = 0; i < PillerPrefab; i++)
-    //    {
-    //        var currentPlatform = Instantiate(pillarPrefab);
-    //        currentPillar = nextPillar == null ? currentPlatform : nextPillar;
-    //        nextPillar = currentPlatform;
-    //        currentPlatform.transform.position = pillarPrefab.transform.position + startPos;
-    //        Vector3 tempDistance = new Vector3(Random.Range(spawnRange.x, spawnRange.y) + currentPillar.transform.localScale.x * 0.5f, 0, 0);
-    //        startPos += tempDistance;
 
-    //        if (Random.Range(0, 10) == 0)
-    //        {
-    //            Vector3 tempPos = currentPlatform.transform.position;
-    //        }
-
-
-    //    }
-    //}
     void CreateStartObjects()
     {
         CreatePlatform(false);
@@ -293,8 +268,6 @@ public class GameManager : MonoBehaviour
         playerPos.y = playerPos.y + 0.07f;
         player = Instantiate(playerPrefab,playerPos,Quaternion.identity);
         player.name = "Player";
-        //anim.instance.animator.SetBool("walk", false);
-        //anim.instance.animator.SetBool("idle", true);
 
 
         Vector3 stickPos = stickPrefab.transform.position;
@@ -352,7 +325,6 @@ public class GameManager : MonoBehaviour
     public void CloudAccessed()
     {
         canBuild = false;
-        //anim.instance.animator.SetBool("attack", true);
     }
 
 
@@ -384,14 +356,11 @@ public class GameManager : MonoBehaviour
             var normalized = passed / time;
             var current = Vector3.Lerp(init, target, normalized);
             currentTransform.position = current;
-            //anim.instance.animator.SetBool("idle", false);
 
 
             backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX - 2, backgrounds.transform.position.y, backgrounds.transform.position.z);
             yield return null;
         }
-
-        isMoving = false;
     }
 
     IEnumerator Rotate(Transform currentTransform, Transform target, float time)
