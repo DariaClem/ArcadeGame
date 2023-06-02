@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     private float cameraOffsetX, backgroundOffsetX;
 
-    private bool backOffsetStored, canBuild, isMoving;
+    private bool canBuild, isMoving;
     private bool firstJ, secondJ, thirdJ;
 
     private GameState currentState;
@@ -100,6 +100,8 @@ public class GameManager : MonoBehaviour
         CreateStartObjects();
         cameraOffsetX = currentCamera.transform.position.x - player.transform.position.x;
 
+        backgroundOffsetX = backgrounds.transform.position.x;
+
         GameStart();
     }
     
@@ -121,7 +123,6 @@ public class GameManager : MonoBehaviour
     private void configureSwitches()
     {
         audioMenu.mute = true;
-        backOffsetStored = false;
          
         canBuild = true;
         
@@ -133,13 +134,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
-        if (!backOffsetStored)
-        {
-            backOffsetStored = true;
-            backgroundOffsetX = backgrounds.transform.position.x;
-        }
-
         backgrounds.transform.position = new Vector3(currentCamera.transform.position.x + backgroundOffsetX - 2, backgrounds.transform.position.y, backgrounds.transform.position.z);
 
 
