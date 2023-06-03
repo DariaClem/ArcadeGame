@@ -17,6 +17,7 @@ Porniți într-o călătorie memorabilă cu Pengu în căutarea hărții sale pi
 Dar amintiți-vă, uneori călătoria este mai importantă decât destinația. Sunteți pregătiți să vă alăturați lui Pengu în căutarea sa epică?
 
 Pagina oficială a jocului: https://dariaclem.github.io/Presentation-Site-PenguTrip/
+
 Live DEMO: https://www.youtube.com/watch?v=5kQNpJEjYLY
 
 ### Informații
