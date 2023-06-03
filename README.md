@@ -6,6 +6,8 @@
 
 ![prezentare8](https://user-images.githubusercontent.com/91901282/236703372-da5be053-dbe5-4ab5-8c81-aadc0411feab.png)
 
+Live DEMO: https://www.youtube.com/watch?v=5kQNpJEjYLY
+
 # PenguTrip :eu:
 
 ### Description
