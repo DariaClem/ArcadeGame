@@ -43,7 +43,41 @@ Pe parcursul jocului, vor apărea obiecte care vor modifica modul de joc atunci 
 
 ### Diagramă
 
+În cadrul proiectelor care pun accent pe munca în echipă, o reprezentare grafică pentru a vizualiza elementele jocului și modul în care acestea relaționează sporește productivitatea echipei, făcând fiecare funcționalitate a jocului să fie concisă la implementare. 
+
+Pentru jocul “PenguTrip” a fost realizată următoarea diagramă care ilustrează stările jocului, acțiunile pe care personajul (controlat de utilizator) le poate face, precum și stările în care aceste acțiuni pot fi făcute. 
+
 ![workflowDiagram](https://github.com/DariaClem/ArcadeGame/assets/91968875/cec3fdc1-8ded-40d5-a34e-9014300a1ca6)
+
+### Refactoring, code standards
+
+În procesul de scriere a codului ne-am ghidat după standardele de cod stabilite de Google (https://google.github.io/styleguide/csharp-style.html.).
+
+Când am început să lucrăm la proiect nu știam propriu-zis ce presupune dezvoltarea unui joc. Astfel, pe lângă utilizarea IDE-ului UnityEditor, am fost nevoiți să învățăm cum se face legătura dintre ceea ce lucram acolo și codul din C#. Astfel, folosindu-ne de ceea ce ne punea la dispoziție documentația Unity și alte surse specializate, am dobândit experiență în scrierea codului și formarea legăturii cu jocul, ceea ce ne-a ajutat să avem clean-code, ușor de înțeles și ordonat. Dacă la început am pus în același loc tot ce am găsit, odată cu avansarea în procesul de creare am început să structurăm codul în funcții dedicate.
+
+O parte din standardele implementate sunt:
+
+1. Datele membre sunt grupate după modificatorul de acces în ordinea public, private.
+2. Variabilele private sunt de forma _nume.
+3. Variabilele sunt de tipul camelCase.
+4. Denumirile funcțiilor și a clasei sunt de tipul PascalCase.
+5. Este menționat tipul de date al fiecărei variabile, în loc de a folosi „var”.
+6. Anumite variabile sunt inițializate de la declarare (acolo unde se poate).
+
+### Design Patterns
+
+Utilizare Singleton:
+Am utilizat acest design pattern pentru a avea o singură instanță a anumitor obiecte și pentru a le putea folosi în mai multe scene ale jocului (în special sound-urile). 
+
+Utilizarea Singleton-ului a ajutat la rezolvarea problemei în care obiecte erau multiplicate de fiecare dată când era accesată scena în care erau generate. 
+
+### AI Tools
+
+În procesul de realizare al jocului am avut câteva momente în care ne-am împotmolit. Cum nu am reușit să găsim o soluție concretă pe internet am folosit ChatGPT. 
+
+Cu toate acestea a fost o sarcină destul de dificilă de a obține un răspuns care să ne ajute în problema pe care o întâmpinasem. Programul oferea adesea răspunsuri greșite (prezenta fie soluții inexistente, i.e. biblioteci inexistente, fie soluții care nu funcționau pentru cazul dat). Am reușit totuși, prin indicațiile date de tool, să înțelegem conceptele pe care trebuia să le folosim și cum să le aplicăm pe nevoile noastre. Se poate spune astfel că am învățat din greșelile acestuia. 
+
+
 
 # PenguTrip :eu:
 
@@ -74,5 +108,36 @@ Throughout the game, there will be objects that will modify the gameplay when co
 
 ### Diagram
 
+Within teamwork-oriented projects, a graphical representation to visualize the game elements and how they relate enhances team productivity, making each game functionality concise to implement.
+
+For the game "PenguTrip," the following diagram has been created, illustrating the game states, the actions that the user-controlled character can perform, and the states in which these actions can be done.
+
 ![workflowDiagram](https://github.com/DariaClem/ArcadeGame/assets/91968875/e089f262-7f07-40bf-b53f-39da90010995)
 
+### Refactoring, code standards
+
+During the process of writing the code, we followed the coding standards established by Google (https://google.github.io/styleguide/csharp-style.html).
+
+When we started working on the project, we didn't really know what game development entailed. Therefore, in addition to using the UnityEditor IDE, we had to learn how to link what we were working on to the C# code. By leveraging the resources provided by the Unity documentation and other specialized sources, we gained experience in writing code and establishing the connection with the game. This helped us achieve clean code that is easy to understand and well-organized. Initially, we put everything we found in the same place, but as we progressed in the development process, we began to structure the code into dedicated functions.
+
+Some of the implemented standards include:
+
+1. Member data is grouped based on the access modifier in the order of public, private.
+2. Private variables are in the form of "_name".
+3. Variables are in camelCase.
+4. Function and class names are in PascalCase.
+5. The data type of each variable is specified instead of using "var".
+6. Certain variables are initialized upon declaration (where possible).
+
+### Design patterns
+
+Singleton Usage:
+We utilized this design pattern to have a single instance of certain objects and to be able to use them in multiple scenes of the game (especially for sounds).
+
+The usage of Singleton helped solve the problem where objects were duplicated every time the scene in which they were generated was accessed.
+
+### AI Tools
+
+During the game development process, we encountered several moments where we got stuck. As we couldn't find a concrete solution on the internet, we turned to ChatGPT.
+
+However, obtaining a helpful response to our problem was quite challenging. The program often provided incorrect answers (either suggesting non-existent solutions, such as non-existing libraries, or proposing solutions that didn't work for our specific case). Nevertheless, by following the indications provided by the tool, we managed to understand the concepts we needed to apply and how to tailor them to our needs. It can be said that we learned from its mistakes.
